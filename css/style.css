@@ -1,1 +1,8 @@
-*{}
+.btn-fvc{
+	background-color: #01633E;
+	color: white;
+}
+.btn-fvc:hover{
+	background-color: #007549;
+	color: #e9e9e9;
+}
