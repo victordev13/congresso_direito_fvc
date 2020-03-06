@@ -16,4 +16,13 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+<main>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/fvclogo.png"  class="d-inline-block align-top" height="50" alt="">
+            </a>
+            <a href="login.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Acessar</a>
+        </div>
+    </nav>
     
