@@ -18,12 +18,13 @@ if(isset($_POST['login'])){
         $senha = md5($_POST['senha']);
         $login = Usuario::login($usuario, $senha);
 
-        if($login){
+        if($login === true){
             if(!isset($_SESSION['logado'])){
                 $_SESSION['logado'] = true;
                 $_SESSION['login'] = $login;
                 $_SESSION['nome'] = Usuario::getNome($usuario);
                 $_SESSION['nivelAcesso'] = Usuario::getNivelAcesso($usuario);
+                echo "<script>console.log('set sessions = true')";
                 direcionaParaPainel();
             }
         }else{
@@ -31,6 +32,8 @@ if(isset($_POST['login'])){
         }
     }
 }
+
+var_dump($_SESSION);
 
 if(isset($_SESSION['logado'])){
     $linkAcesso = "<a href='".getPainel()."'>Acessar</a>";

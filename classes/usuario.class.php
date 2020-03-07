@@ -9,10 +9,10 @@ class Usuario {
 		$sql = "SELECT * FROM usuario WHERE usuario = '$usuario' AND senha = '$senha'";
 		$resultado = mysqli_query($connect, $sql);
 
-		if(mysqli_num_rows($resultado)==1){
+		if(mysqli_num_rows($resultado)){
 			return true;
 		}else{
-			return $resultado;
+			return false;
 		}
 
 		FecharConexao($connect);
@@ -24,7 +24,7 @@ class Usuario {
 		$sql = "SELECT nome FROM usuario WHERE usuario = '$usuario'";
 		$resultado = mysqli_query($connect, $sql);
 		
-		if($resultado){
+		if(mysqli_num_rows($resultado)){
 			$dados = mysqli_fetch_array($resultado);
 			$nome = $dados['0'];
 			return $nome;
@@ -41,7 +41,7 @@ class Usuario {
 		$sql = "SELECT nivel FROM usuario WHERE usuario = '$usuario'";
 		$resultado = mysqli_query($connect, $sql);
 		
-		if($resultado){
+		if(mysqli_num_rows($resultado)){
 			$dados = mysqli_fetch_array($resultado);
 			$nivel = $dados['0'];
 			return $nivel;
