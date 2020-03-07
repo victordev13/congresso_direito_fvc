@@ -1,8 +1,8 @@
 <?php
     $host = "localhost";
-    $db = "congresso";
-    $user = "phpmyadmin";
-    $pwd = "root";
+    $db = "locadora";
+    $user = "root";
+    $pwd = "";
 
 $connect = @mysqli_connect($host, $user, $pwd, $db) or die(mysqli_connect_error());
 

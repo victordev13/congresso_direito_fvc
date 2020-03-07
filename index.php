@@ -63,7 +63,7 @@ if (isset($_POST['inscrever'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="cpd">CPF</label>
-                                    <input type="text" class="form-control" id="cpf" class="cpf" name="cpf-login" required>
+                                    <input type="text" class="form-control" id="cpf-login" class="cpf" name="cpf-login" required>
                                 </div>
                             </div>
                             <div class="modal-footer">

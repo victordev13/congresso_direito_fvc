@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/header.php';
+
 require_once 'functions.php';
 require_once 'classes/usuario.class.php';
 /*
@@ -42,6 +42,28 @@ if(isset($_GET['logout']) && !isset($_SESSION['logado'])){
     $mensagem = "Logout efetuado com sucesso!";
 }
 ?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Congresso de Direito da FVC</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-dark">
+<main>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">
+                <img src="img/fvclogo.png"  class="d-inline-block align-top" height="50" alt="">
+            </a>
+            <a href="index.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Voltar</a>
+        </div>
+    </nav>
+    
 
 <body class="bg-dark">
     <div class="row justify-content-center align-items-center" style="height:80vh; width: 100%">
