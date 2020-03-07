@@ -46,6 +46,16 @@ function direcionaParaPainel(){
 	}
 }
 
+function getPainel(){
+	$nivel = $_SESSION['nivelAcesso'];
+	
+	if($nivel == 0){
+		return "financeiro";
+	}else if($nivel == 1){
+		return "admin";
+	}
+}
+
 function verifyCPF($cpf){
 	$cpf = "$cpf";
 	if (strpos($cpf, "-") !== false) {

@@ -33,10 +33,8 @@ if (isset($_POST['login'])) {
     }
 }
 
-var_dump($_SESSION);
-
 if(isset($_SESSION['logado'])){
-    //$linkAcesso = "<a href='".getPainel()."'>Acessar</a>";
+    $linkAcesso = "<a href='".getPainel()."'>Acessar</a>";
     $mensagem = "Já está logado ".$linkAcesso."/<a href='logout.php'>Sair</a>";
 }
 
@@ -44,21 +42,13 @@ if(isset($_GET['logout']) && !isset($_SESSION['logado'])){
     $mensagem = "Logout efetuado com sucesso!";
 }
 ?>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">
-                <img src="img/fvclogo.png"  class="d-inline-block align-top" height="50" alt="">
-            </a>
-            <a href="index.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Voltar</a>
-        </div>
-    </nav>
+
 <body class="bg-dark">
     <div class="row justify-content-center align-items-center" style="height:80vh; width: 100%">
         <div class="card login">
             <div class="card-body direito">
                 <img src="img/direito.png" class="logo-form rounded mx-auto d-block" style="height: 150px">
             <div class="card-body"> 
-            		<img src="img/fvclogo.png" class="logo-form rounded mx-auto d-block" style="width: 300px"><br>
                     <?php  
                         if(!$erro == ""){
                             echo "<div class='alert alert-danger alerta-sm' role='alert'>";
