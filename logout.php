@@ -7,6 +7,11 @@ if(isset($_SESSION['logado'])){
         isset($_SESSION['nome']);
         isset($_SESSION['nivelAcesso']);    
         header("Location: login.php?logout");
+    }else{
+        unset($_SESSION['logado']);
+        header("Location: login.php?logout");
     }
+}else{
+    header("Location: login.php");
 }
 

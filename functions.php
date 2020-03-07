@@ -19,25 +19,24 @@ function formata($string){
 	FecharConexao($connect);
 }
 
-function acessoRestrito($sessao, $nivelUsuario){
+function acessoRestrito($nivelUsuarioPermitido){
 	global $connect;
 
 	if(!isset($_SESSION)){
 		session_start();
 	}
-	if(!isset($_SESSION[$sessao]) && !isset($_SESSION['nivelAcesso'])){
-		header('Location: ../index.php');
+	if(!isset($_SESSION['logado']) && !isset($_SESSION['nivelAcesso'])){
+		header('Location: ../login.php');
 	}else{
-		if(isset($_SESSION['nivelAcesso'])){
-			if($_SESSION['nivelAcesso'] != $nivelUsuario){
-				header("Location: ../index.php");
-			}
+		if($_SESSION['nivelAcesso'] != $nivelUsuarioPermitido){
+			header("Location: ../login.php");
 		}
-		
 	}
 }
 
 function direcionaAcesso(){
+	global $connect;
+
 	$sql = "";
 
 	$nivel = "";

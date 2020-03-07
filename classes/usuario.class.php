@@ -43,7 +43,7 @@ class Usuario {
 		
 		if($resultado){
 			$dados = mysqli_fetch_array($resultado);
-			$nome = $dados['0'];
+			$nivel = $dados['0'];
 			return $nivel;
 		}else{
 			return $resultado;

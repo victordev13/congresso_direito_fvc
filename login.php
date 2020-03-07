@@ -2,7 +2,11 @@
 require_once 'includes/header.php';
 require_once 'functions.php';
 require_once 'classes/usuario.class.php';
-
+/*
+****DESCRICAO DOS NIVEIS DE ACESSO****
+    Financeiro: 0
+    Administrador: 1
+*/
 session_start();
 
 $mensagem = "";
@@ -18,7 +22,7 @@ if(isset($_POST['login'])){
             $_SESSION['logado'] = true;
             $_SESSION['login'] = $login;
             $_SESSION['nome'] = Usuario::getNome($usuario);
-            $SESSION['nivelAcesso'] = Usuario::getNivelAcesso($usuario);
+            $_SESSION['nivelAcesso'] = Usuario::getNivelAcesso($usuario);
             goToPainel();
         }else{
             $erro = "Usuário e/ou Senha inválidos<br>
