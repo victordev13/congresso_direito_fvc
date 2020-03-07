@@ -11,7 +11,6 @@
 </head>
 <body class="bg-dark">
 <main>
-<<<<<<< HEAD
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -21,6 +20,4 @@
         </div>
     </nav>
     
-=======
 <!-- removi o menu desse arquivo pois algumas telas precisam somente da inclusao de js e css-->
->>>>>>> 46077909f8cc50b269980f0a1ec91d6bacabb63f

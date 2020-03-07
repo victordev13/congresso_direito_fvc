@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
 var_dump($_SESSION);
 
 if(isset($_SESSION['logado'])){
-    $linkAcesso = "<a href='".getPainel()."'>Acessar</a>";
+    //$linkAcesso = "<a href='".getPainel()."'>Acessar</a>";
     $mensagem = "Já está logado ".$linkAcesso."/<a href='logout.php'>Sair</a>";
 }
 
