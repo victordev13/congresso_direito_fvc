@@ -7,10 +7,10 @@
     $mensagem = "";
     
     if(isset($_POST['inscrever'])){
-            $nome = addslashes($_POST['nome']);
-            $email = addslashes($_POST['email']);
+            $nome = formata($_POST['nome']);
+            $email = formata($_POST['email']);
             $cpf = formatarCPF($_POST['cpf']);
-            $periodo = addslashes($_POST['periodo']);
+            $periodo = formata($_POST['periodo']);
             $turno = "";
 
             if($periodo=0){
@@ -19,12 +19,11 @@
                 $categoria = "aluno";
             }
             if(!$turno == ""){
-                $turno = addslashes($_POST['turno']);
+                $turno = formata($_POST['turno']);
             }
-            $erro = "Erro ao realizar Inscrição!";
             $retorno = Participante::cadastrar($nome, $email, $cpf, $categoria, $periodo, $turno);
             if($retorno){
-
+                $mensagem = "Inscrição realizada com sucesso";
             }else{
                 $erro = "Erro ao realizar Inscrição!";
             }
@@ -78,7 +77,7 @@
                     <option value="0">Visitante </option>
                 </select>                             
             </div>
-            <div class="form-group" style="display:none">
+            <div class="form-group" style="display:none" id="div_turno">
                 <label for="turno">Turno</label>
                 <select class="custom-select" id="turno" required name="turno">
                     <option selected disabled>Selecione...</option>
