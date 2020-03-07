@@ -9,7 +9,7 @@ class Usuario {
 		$sql = "SELECT * FROM usuario WHERE usuario = '$usuario' AND senha = '$senha'";
 		$resultado = mysqli_query($connect, $sql);
 
-		if($resultado){
+		if(mysqli_num_rows($resultado)==1){
 			return true;
 		}else{
 			return $resultado;
