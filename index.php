@@ -80,6 +80,19 @@ if (isset($_POST['inscrever'])) {
             </button>
         </div>
 
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">
+                <img src="img/fvclogo.png"  class="d-inline-block align-top" height="50" alt="">
+            </a>
+            <a href="login.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Acesso restrito</a>
+        </div>
+    </nav>
+    
+
+    <div class="container">
+        <div class="card border-success mt-4 mx-auto mb-5 center" id="form_inscricao"    >
+        <div class="card-header bg-fvc text-light">Inscrição para o Congresso de Direito da FVC</div>
         <div class="card-body">
             <?php
             if (!$erro == "") {
