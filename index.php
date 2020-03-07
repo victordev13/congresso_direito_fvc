@@ -5,14 +5,16 @@ require_once 'classes/participante.class.php';
 
 $erro = "";
 $mensagem = "";
+$login = "";
 
 if (isset($_POST['login'])) {
     $email = formata($_POST['email-login']);
     $cpf = formatarCPF($_POST['cpf-login']);
-    if (verifyCPF($cpf)) {
 
+    if (verifyCPF($cpf)) {
+        $login = Participante::login($email, $cpf);
     }else {
-        $erro = "CPF inválido!";
+        $modal_erro = "CPF inválido!";
     }
 }
 
@@ -44,6 +46,19 @@ if (isset($_POST['inscrever'])) {
 
 ?>
 <div class="container">
+<?php
+if($login){
+            ?>
+                <div class="modal fade bd-example-modal-lg" data-show="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                    ...
+                    </div>
+                </div>
+                </div>
+            <?php
+        }
+ ?>
     <div class="card border-success mt-4 mx-auto mb-5 center" id="form_inscricao">
         <div class="card-header bg-fvc text-light">Inscrição para o Congresso de Direito da FVC
             <form id="login" method="POST">
@@ -57,6 +72,18 @@ if (isset($_POST['inscrever'])) {
                                 </button>
                             </div>
                             <div class="modal-body">
+                            <?php
+                                if (!$modal_erro == "") {
+                                    echo "<div class='alert alert-danger alerta-sm' role='alert'>";
+                                    echo $modal_erro;
+                                    echo "</div>";
+                                }
+                                if (!$modal_mensagem == "") {
+                                    echo "<div class='alert alert-warning alerta-sm' role='alert'>";
+                                    echo $modal_mensagem;
+                                    echo "</div>";
+                                }
+                            ?>
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" name="email-login" required>
@@ -67,7 +94,7 @@ if (isset($_POST['inscrever'])) {
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="login">Entrar</button>
+                                <button type="submit" class="btn btn-fvc" name="login">Entrar</button>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                             </div>
                         </div>
@@ -88,7 +115,7 @@ if (isset($_POST['inscrever'])) {
             }
             if (!$mensagem == "") {
                 echo "<div class='alert alert-warning alerta-sm' role='alert'>";
-
+                echo $mensagem;
                 echo "</div>";
             }
             ?>
