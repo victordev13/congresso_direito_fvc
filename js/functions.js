@@ -8,6 +8,3 @@ periodo.onchange = function (){
         div_turno.style.display = 'block';
     }
 }
-
-
-

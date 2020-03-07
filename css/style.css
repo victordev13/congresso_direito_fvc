@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 .btn-fvc{
 	background-color: #01633E;
 	color: white;
@@ -11,6 +12,9 @@
 
 .bg-fvc{
 	background-color: #01633E;
+	display: flex;
+	align-items: center;
+	justify-content: right;
 }
 
 .color-fvc{
@@ -18,4 +22,49 @@
 }
 #form_inscricao{
 	max-width: 600px;
+	background-color: #f5f6fa;
+}
+
+body{
+	background: url('../img/background.png') center;
+	font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+	background-color: rgba(245, 246, 250,0.6);
+	width: 100%;
+}
+
+img{
+	height: 65px;
+}
+
+#inscricao {
+	padding: 0 3rem;
+
+}
+
+
+@media (max-width: 568px) {
+  img{
+		height: 50px;
+	}
+	.bg-fvc{
+		font-size: 15px;
+	}
+	#inscricao {
+    padding: 0 0.5rem;
+	}
+}
+
+.direito{
+	width: 350px;
+}
+
+#subscribe{
+	margin-left: 127px;
+}
+
+#MyModal{
+	color: #000000;
 }

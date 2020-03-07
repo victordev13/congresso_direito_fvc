@@ -1,6 +1,6 @@
 <?php
-    $host = "localhost:3307";
-    $db = "form";
+    $host = "localhost";
+    $db = "locadora";
     $user = "root";
     $pwd = "";
 

@@ -8,13 +8,13 @@ session_start();
 $mensagem = "";
 $erro = "";
 
-if(isset($_POST['login'])){
-    if(isset($_POST['usuario']) && isset($_POST['senha'])){
+if (isset($_POST['login'])) {
+    if (isset($_POST['usuario']) && isset($_POST['senha'])) {
         $usuario = formata($_POST['usuario']);
         $senha = md5($_POST['senha']);
         $login = Usuario::login($usuario, $senha);
-        
-        if($login){
+
+        if ($login) {
             $_SESSION['logado'] = true;
             $_SESSION['login'] = $login;
             $_SESSION['nome'] = Usuario::getNome($usuario);
@@ -27,10 +27,10 @@ if(isset($_POST['login'])){
 <body class="bg-dark">
     <div class="row justify-content-center align-items-center" style="height:80vh; width: 100%">
         <div class="card login">
-            <div class="card-body"> 
-            		<img src="img/fvclogo.png" class="logo-form rounded mx-auto d-block" style="width: 300px">
+            <div class="card-body direito">
+                <img src="img/direito.png" class="logo-form rounded mx-auto d-block" style="height: 150px">
                 <form method="POST" id="formLogin" name="formLogin">
-                    <div class="form-group mt-4" id="campoUsuario">    
+                    <div class="form-group mt-4" id="campoUsuario">
                         <input type="text" class="form-control" id="usuario" placeholder="Nome de Usuário" name="usuario" minlength=4 maxlength=20 required="">
                     </div>
                     <div class="form-group">
@@ -41,7 +41,7 @@ if(isset($_POST['login'])){
             </div>
         </div>
     </div>
-    
-<?php
-require_once 'includes/footer.php';
-?>
+
+    <?php
+    require_once 'includes/footer.php';
+    ?>
