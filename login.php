@@ -13,17 +13,28 @@ if(isset($_POST['login'])){
         $usuario = formata($_POST['usuario']);
         $senha = md5($_POST['senha']);
         $login = Usuario::login($usuario, $senha);
-        
+
         if($login){
             $_SESSION['logado'] = true;
             $_SESSION['login'] = $login;
             $_SESSION['nome'] = Usuario::getNome($usuario);
             $SESSION['nivelAcesso'] = Usuario::getNivelAcesso($usuario);
+            goToPainel();
+        }else{
+            $erro = "Usuário e/ou Senha inválidos<br>
+                Entre em contato com o administrador do sistema";
         }
     }
 }
 ?>
-
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">
+                <img src="img/fvclogo.png"  class="d-inline-block align-top" height="50" alt="">
+            </a>
+            <a href="index.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Voltar</a>
+        </div>
+    </nav>
 <body class="bg-dark">
     <div class="row justify-content-center align-items-center" style="height:80vh; width: 100%">
         <div class="card login">

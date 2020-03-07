@@ -14,6 +14,15 @@ class Participante {
 		FecharConexao($connect);
 	}
 
+	function imprimirCracha(){
+		
+	}
+	
+	function reimprimirCracha(){
+
+	}
+
+
 	
 }
 

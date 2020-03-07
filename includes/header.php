@@ -11,12 +11,4 @@
 </head>
 <body class="bg-dark">
 <main>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">
-                <img src="img/fvclogo.png"  class="d-inline-block align-top" height="50" alt="">
-            </a>
-            <a href="login.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Acesso restrito</a>
-        </div>
-    </nav>
-    
+<!-- removi o menu desse arquivo pois algumas telas precisam somente da inclusao de js e css-->
