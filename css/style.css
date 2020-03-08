@@ -3,6 +3,9 @@
 	background-color: #01633E;
 	color: white;
 	border-color: #007549;
+	margin-top: 20px;
+	float: right;
+}
 }
 .btn-fvc:hover{
 	background-color: #007549;
@@ -30,20 +33,20 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
-.navbar{
+nav{
+	height: 85px;
 	background-color: rgba(245, 246, 250,0.6);
 	width: 100%;
 }
 
-img{
-	height: 65px;
+nav img{
+	height: 50px;
 }
 
 #inscricao {
-	padding: 0 3rem;
+	padding-left: 300px;
 
 }
-
 
 @media (max-width: 568px) {
   img{
