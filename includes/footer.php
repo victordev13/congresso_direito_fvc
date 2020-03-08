@@ -1,6 +1,7 @@
 <footer class="footer">
-</footer>
 
+</footer>
+</main>
 </body>
 
 <script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>

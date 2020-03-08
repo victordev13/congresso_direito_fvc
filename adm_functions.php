@@ -22,7 +22,7 @@ function getNomeAdmin($usuario){
     $sql = "SELECT nome FROM usuario WHERE usuario = '$usuario'";
     $resultado = mysqli_query($connect, $sql);
     
-    if(mysqli_num_rows($resultado)){
+    if(mysqli_num_rows($resultado) >= 1){
         $dados = mysqli_fetch_array($resultado);
         $nome = $dados['0'];
         return $nome;
@@ -40,13 +40,16 @@ function getIdAdmin(){
     $sql = "SELECT id_usuario FROM usuario WHERE usuario = '$usuario'";
     $resultado = mysqli_query($connect, $sql);
     
-    if(mysqli_num_rows($resultado)){
-        $dados = mysqli_fetch_array($resultado);
-        $id_usuario = $dados['0'];
-        return $id_usuario;
-    }else{
-        return $resultado;
+    if($resultado){
+        if(mysqli_num_rows($resultado) >= 1){
+            $dados = mysqli_fetch_array($resultado);
+            $id_usuario = $dados['0'];
+            return $id_usuario;
+        }else{
+            return $resultado;
+        }
     }
+    
 
     FecharConexao($connect);
 }
@@ -57,7 +60,7 @@ function getNivelAcesso($usuario){
     $sql = "SELECT nivel FROM usuario WHERE usuario = '$usuario'";
     $resultado = mysqli_query($connect, $sql);
     
-    if(mysqli_num_rows($resultado)){
+    if(mysqli_num_rows($resultado) >= 1){
         $dados = mysqli_fetch_array($resultado);
         $nivel = $dados['0'];
         return $nivel;
@@ -77,13 +80,12 @@ function getNivelAcesso($usuario){
         $sql = "UPDATE inscritos SET status_pagamento='EFETUADO' WHERE cpf='$cpf'";
         $resultado = mysqli_query($connect, $sql);
         
-        if(mysqli_num_rows($resultado)){
-            $dados = mysqli_fetch_array($resultado);
-            $nivel = $dados['0'];
-            return $nivel;
+        if($resultado == 1){
+            return true;
         }else{
-            return $resultado;
+            return false;
         }
+       
 
         FecharConexao($connect);
 	}
@@ -94,19 +96,21 @@ function getNivelAcesso($usuario){
         $id_usuario = getIdAdmin();
         $id_inscrito = "SELECT id_incritos FROM inscritos WHERE cpf='$cpf'";
 
-        $sql = "INSERT INTO `pagamento` (`id_pagamento`, `id_usuario`, `id_inscritos`, `horario`) VALUES (NULL, '$id_usuario', '$_', CURRENT_TIMESTAMP)";
+        $sql = "INSERT INTO `pagamento` (`id_pagamento`, `id_usuario`, `id_inscritos`, `horario`) VALUES (NULL, '$id_usuario', '$id_inscrito', CURRENT_TIMESTAMP)";
         $resultado = mysqli_query($connect, $sql);
         
-        if(mysqli_num_rows($resultado)){
-            $dados = mysqli_fetch_array($resultado);
-            $nivel = $dados['0'];
-            return $nivel;
-        }else{
-            return $resultado;
+        if($resultado){
+            if(mysqli_num_rows($resultado)){
+                return true;
+            }else{
+                return false;
+            }
         }
+        
     
         FecharConexao($connect);
     }
+    
 //  FIM FUNÇÕES DO USUÁRIO FINANCEIRO //
 
 ?>
