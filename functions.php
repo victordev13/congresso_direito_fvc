@@ -26,7 +26,8 @@ function formatarCPF($valor)
 	return $valor;
 }
 
-function formata($string){
+function formata($string)
+{
 	$connect = conection();
 
 	$stringTratada = mysqli_real_escape_string($connect, $string);
@@ -119,7 +120,8 @@ function verifyCPF($cpf)
 	return $returner;
 }
 
-function verifySubscribe($cpf){
+function verifySubscribe($cpf)
+{
 	$conection = conection();
 	$query = mysqli_query($conection, "SELECT * FROM inscritos WHERE cpf='$cpf'");
 	if (mysqli_num_rows($query) >= 1) {
@@ -129,10 +131,12 @@ function verifySubscribe($cpf){
 	}
 }
 
-function subscribe($nome, $email, $cpf, $tel, $periodo, $turno){
+function subscribe($nome, $email, $cpf, $tel, $periodo, $turno)
+{
+	$codigobarra = rand(100000000000000000, 999999999999999999);
 	$conection = conection();
-	$sql = "INSERT INTO inscritos (nome, email, cpf, tel, periodo, turno, status) 
-          VALUES('$nome', '$email', '$cpf', '$tel', '$periodo', '$turno', 0)";
+	$sql = "INSERT INTO inscritos (nome, email, cpf, tel, periodo, turno, status, codigobarra) 
+          VALUES('$nome', '$email', '$cpf', '$tel', '$periodo', '$turno', 0, '$codigobarra')";
 
 	if (mysqli_query($conection, $sql)) {
 		return true;
@@ -141,20 +145,110 @@ function subscribe($nome, $email, $cpf, $tel, $periodo, $turno){
 	}
 }
 
-function userLogin($email, $cpf){
+function userLogin($email, $cpf)
+{
 	$conection = conection();
-  $query = mysqli_query($conection, "SELECT * FROM inscritos WHERE email='$email' and cpf='$cpf'");
-  if(mysqli_num_rows($query) >= 1){
-    return true;
-  }else{
-    return false;
-  }
+	$query = mysqli_query($conection, "SELECT * FROM inscritos WHERE email='$email' and cpf='$cpf'");
+	if (mysqli_num_rows($query) >= 1) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
-function getIDSubscribe($email, $cpf){
+function getIDSubscribe($email, $cpf)
+{
 	$conection = conection();
-  $query = mysqli_query($conection, "SELECT * FROM inscritos WHERE email='$email' and cpf='$cpf'");
-  $row = mysqli_fetch_array($query);
-  $id_subscribe = $row['id_inscritos'];
-  return $id_subscribe;
+	$query = mysqli_query($conection, "SELECT * FROM inscritos WHERE email='$email' and cpf='$cpf'");
+	$row = mysqli_fetch_array($query);
+	$id_subscribe = $row['id_inscritos'];
+	return $id_subscribe;
+}
+
+
+function fbarcode($valor)
+{
+
+	$fino = 1;
+	$largo = 3;
+	$altura = 40;
+
+	$barcodes[0] = "00110";
+	$barcodes[1] = "10001";
+	$barcodes[2] = "01001";
+	$barcodes[3] = "11000";
+	$barcodes[4] = "00101";
+	$barcodes[5] = "10100";
+	$barcodes[6] = "01100";
+	$barcodes[7] = "00011";
+	$barcodes[8] = "10010";
+	$barcodes[9] = "01010";
+	for ($f1 = 9; $f1 >= 0; $f1--) {
+		for ($f2 = 9; $f2 >= 0; $f2--) {
+			$f = ($f1 * 10) + $f2;
+			$texto = "";
+			for ($i = 1; $i < 6; $i++) {
+				$texto .=  substr($barcodes[$f1], ($i - 1), 1) . substr($barcodes[$f2], ($i - 1), 1);
+			}
+			$barcodes[$f] = $texto;
+		}
+	}
+
+
+	//Desenho da barra
+
+
+	//Guarda inicial
+?>
+	<img src=".././img/img/p.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
+	<img src="../img/b.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
+	<img src="../img/p.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
+	<img src="../img/b.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
+	<?php
+	$texto = $valor;
+	if ((strlen($texto) % 2) <> 0) {
+		$texto = "0" . $texto;
+	}
+
+	// Draw dos dados
+	while (strlen($texto) > 0) {
+		$i = round(esquerda($texto, 2));
+		$texto = direita($texto, strlen($texto) - 2);
+		$f = $barcodes[$i];
+		for ($i = 1; $i < 11; $i += 2) {
+			if (substr($f, ($i - 1), 1) == "0") {
+				$f1 = $fino;
+			} else {
+				$f1 = $largo;
+			}
+	?>
+			<img src="../img/p.gif" width="<?php echo $f1; ?>" height="<?php echo $altura; ?>" border="0">
+			<?php
+			if (substr($f, $i, 1) == "0") {
+				$f2 = $fino;
+			} else {
+				$f2 = $largo;
+			}
+			?>
+			<img src="../img/b.gif" width="<?php echo $f2; ?>" height="<?php echo $altura; ?>" border="0">
+	<?php
+		}
+	}
+
+	// Draw guarda final
+	?>
+	<img src="../img/p.gif" width="<?php echo $largo; ?>" height="<?php echo $altura; ?>" border="0">
+	<img src="../img/b.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
+	<img src="../img/p.gif" width="<?php echo 1; ?>" height="<?php echo $altura; ?>" border="0">
+<?php
+} //Fim da fun��o
+
+function esquerda($entra, $comp)
+{
+	return substr($entra, 0, $comp);
+}
+
+function direita($entra, $comp)
+{
+	return substr($entra, strlen($entra) - $comp, $comp);
 }
