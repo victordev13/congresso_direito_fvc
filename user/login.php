@@ -1,6 +1,6 @@
 <?php
 require_once '../functions.php';
-require_once '../classes/participante.class.php';
+require_once '../user_functions.php';
 require_once '../db/connect.php';
 $erro = "";
 $mensagem = "";

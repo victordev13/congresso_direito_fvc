@@ -1,7 +1,7 @@
 <?php
 
 require_once 'functions.php';
-require_once 'classes/usuario.class.php';
+require_once 'adm_functions.php';
 /*
 ****DESCRICAO DOS NIVEIS DE ACESSO****
     Financeiro: 0
@@ -16,15 +16,13 @@ if (isset($_POST['login'])) {
     if (isset($_POST['usuario']) && isset($_POST['senha'])) {
         $usuario = $_POST['usuario'];
         $senha = md5($_POST['senha']);
-        $login = Usuario::login($usuario, $senha);
+        $login = loginAdmin($usuario, $senha);
 
         if ($login === true) {
             if (!isset($_SESSION['logado'])) {
                 $_SESSION['logado'] = true;
-                $_SESSION['login'] = $login;
-                $_SESSION['nome'] = Usuario::getNome($usuario);
-                $_SESSION['nivelAcesso'] = Usuario::getNivelAcesso($usuario);
-                echo "<script>console.log('set sessions = true')";
+                $_SESSION['usuario'] = $usuario;
+                $_SESSION['nivelAcesso'] = getNivelAcesso($usuario);
                 direcionaParaPainel();
             }
         } else {
