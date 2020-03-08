@@ -1,7 +1,6 @@
 <?php
 require_once 'includes/header.php';
 require_once 'functions.php';
-require_once 'classes/participante.class.php';
 
 $erro = "";
 $mensagem = "";

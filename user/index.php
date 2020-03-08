@@ -1,5 +1,6 @@
 <?php
 require_once '../functions.php';
+require_once 'user_functions.php';
 include('./checkLogin.php');
 $erro = "";
 $mensagem = "";

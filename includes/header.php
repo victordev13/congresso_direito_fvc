@@ -6,7 +6,7 @@
     <title>Inscrição - Congresso de Direito da FVC</title>
     <link rel="stylesheet" type="text/css" href="/congresso_direito_fvc/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" type="text/css" href="/congresso_direito_fvc/css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/congresso_direito_fvc/img/favicon.ico" type="image/x-icon">
 
     <!-- CSS Files -->
     <link href="/congresso_direito_fvc/assets/css/bootstrap.min.css" rel="stylesheet" />
