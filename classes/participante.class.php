@@ -1,5 +1,4 @@
 <?php
-require_once 'db/connect.php';
 
 class Participante {
 
@@ -18,10 +17,10 @@ class Participante {
 	function login($email, $cpf){
         global $connect;
 
-		//$sql = "SELECT * FROM participante WHERE email = '$email' AND cpf = '$cpf'";
+		$sql = "SELECT * FROM participante WHERE email = '$email' AND cpf = '$cpf'";
 		$resultado = mysqli_query($connect, $sql);
 
-		if(mysqli_num_rows($resultado)){
+		if($resultado){
 			return true;
 		}else{
 			return false;

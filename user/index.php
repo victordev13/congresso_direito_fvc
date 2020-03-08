@@ -211,18 +211,6 @@ function getStatus()
 
                         <h5 class="info-text">Este é o status atual da sua inscrição</h5>
                         <div class="col-sm-10 col-sm-offset-1">
-                          <?php
-                          if (!$erro == "") {
-                            echo "<div class='alert alert-danger alerta-sm' role='alert'>";
-                            echo $erro;
-                            echo "</div>";
-                          }
-                          if (!$mensagem == "") {
-                            echo "<div class='alert alert-warning alerta-sm' role='alert'>";
-
-                            echo "</div>";
-                          }
-                          ?>
                           <div class="form-group">
                             <table class="table table-striped">
                               <thead>
