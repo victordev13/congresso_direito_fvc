@@ -1,6 +1,6 @@
 <?php
 require_once '../functions.php';
-require_once 'user_functions.php';
+require_once '../user_functions.php';
 include('./checkLogin.php');
 $erro = "";
 $mensagem = "";
@@ -221,31 +221,33 @@ function codigoBarras()
 
                         <h5 class="info-text">Este é o status atual da sua inscrição</h5>
                         <div class="col-sm-10 col-sm-offset-1">
-                          <div class="form-group">
-                            <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th scope="col">Nome</th>
-                                  <th scope="col">Email</th>
-                                  <th scope="col">Período</th>
-                                  <?php
-                                  if (!getTurno() == '') {
-                                    echo '<th scope="col">Turno</th>';
-                                  }
-                                  ?>
-                                  <th scope="col">Status</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th scope="row"><?php echo getNome(); ?></th>
-                                  <td><?php echo getEmail(); ?></td>
-                                  <td><?php echo getPeriodo(); ?></td>
-                                  <?php echo getTurno(); ?>
-                                  <td><?php echo getStatus(); ?></td>
-                                </tr>
-                              </tbody>
-                            </table>
+                          <div class="form-group lista">
+                            <ul class="list-group">
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Nome:</b>
+                                <span class="list"><?php echo getNome(); ?></span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Email:</b>
+                                <span class="list"><?php echo getEmail(); ?></span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Período:</b>
+                                <span class="list"><?php echo getPeriodo(); ?></span>
+                              </li>
+                              <?php
+                              if (!getTurno() == '') {
+                                echo '<li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <b>Turno:</b>
+                                        <span class="list">' . getTurno() . '</span>
+                                      </li>';
+                              }
+                              ?>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Status:</b>
+                                <span class="list"><?php echo getStatus(); ?></span>
+                              </li>
+                            </ul>
                           </div>
                           <div class="codigobarras">
                             <div>

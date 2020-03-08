@@ -1,6 +1,6 @@
 <?php
-$host="localhost:3307"; 
+$host="localhost"; 
 $username="root"; 
 $password=""; 
-$db_name="form";
+$db_name="congresso";
 ?>
