@@ -1,13 +1,22 @@
 <?php
 require_once '../functions.php';
-
+require_once '../classes/participante.class.php';
+require_once '../db/connect.php';
 $erro = "";
 $mensagem = "";
 
 if (isset($_POST['login'])) {
   $email = formata($_POST['email-login']);
   $cpf = formatarCPF($_POST['cpf-login']);
+  
   if (verifyCPF($cpf)) {
+    $login = Participante::login($email, $cpf);
+        
+    if($login){
+      header("Location: index.php");
+    }else{
+      $erro = "Email e/ou CPF Inválido(s)";
+    }
   } else {
     $erro = "CPF inválido!";
   }

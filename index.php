@@ -5,18 +5,6 @@ require_once 'classes/participante.class.php';
 
 $erro = "";
 $mensagem = "";
-$login = "";
-
-if (isset($_POST['login'])) {
-    $email = formata($_POST['email-login']);
-    $cpf = formatarCPF($_POST['cpf-login']);
-
-    if (verifyCPF($cpf)) {
-        $login = Participante::login($email, $cpf);
-    }else {
-        $modal_erro = "CPF inválido!";
-    }
-}
 
 if (isset($_POST['inscrever'])) {
     $nome = formata($_POST['nome']);

@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
                 direcionaParaPainel();
             }
         } else {
-            $erro = "Usuário e/ou Senha inválidos<br>";
+            $erro = "Usuário e/ou Senha inválido(s)<br>";
         }
     }
 }
