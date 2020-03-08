@@ -27,7 +27,7 @@
             <a class="navbar-brand" href="index.php">
                 <img src="img/fvclogo.png"  class="d-inline-block align-top" alt="Logo FVC">
             </a>
-            <a href="login.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Acesso restrito</a>
+            <a href="/congresso_direito_fvc/login.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Acesso restrito</a>
         </div>
     </nav>
     
