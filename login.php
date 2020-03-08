@@ -14,7 +14,7 @@ $erro = "";
 
 if (isset($_POST['login'])) {
     if (isset($_POST['usuario']) && isset($_POST['senha'])) {
-        $usuario = formata($_POST['usuario']);
+        $usuario = $_POST['usuario'];
         $senha = md5($_POST['senha']);
         $login = Usuario::login($usuario, $senha);
 

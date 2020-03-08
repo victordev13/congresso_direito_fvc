@@ -7,7 +7,18 @@ $mensagem = "";
 if (isset($_POST['login'])) {
   $email = formata($_POST['email-login']);
   $cpf = formatarCPF($_POST['cpf-login']);
+
   if (verifyCPF($cpf)) {
+    if (userLogin($email, $cpf)) {
+      $id_subscribe = getIDSubscribe($email, $cpf);
+      @session_start();
+      $_SESSION['subscribe'] = true;
+      $_SESSION['id_subscribe'] = $id_subscribe;
+      
+      header("location: index.php");
+    } else {
+      $erro = "Inscrição não encontrada!";
+    }
   } else {
     $erro = "CPF inválido!";
   }
@@ -110,7 +121,6 @@ if (isset($_POST['login'])) {
                             echo "<div class='alert alert-danger alerta-sm' role='alert'>";
                             echo $erro;
                             echo "</div>";
-                            
                           }
                           if (!$mensagem == "") {
                             echo "<div class='alert alert-warning alerta-sm' role='alert'>";

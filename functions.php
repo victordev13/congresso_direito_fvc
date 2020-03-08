@@ -1,6 +1,20 @@
 <?php
+function conection()
+{
+	include('db/connect.php');
+	$conection = new mysqli($host, $username, $password, $db_name);
+	mysqli_set_charset($conection, "utf8");
+	if (!$conection) {
+		die("Não foi possível conectar ao banco de dados" . mysqli_connect_error());
+	} else {
+		return $conection;
+	}
+}
 
-require_once 'db/connect.php';
+function fecharConexao($connect)
+{
+	@mysqli_close($connect) or die(mysqli_error($connect));
+}
 
 function formatarCPF($valor)
 {
@@ -12,51 +26,54 @@ function formatarCPF($valor)
 	return $valor;
 }
 
-function formata($string)
-{
-	global $connect;
+function formata($string){
+	$connect = conection();
 
 	$stringTratada = mysqli_real_escape_string($connect, $string);
 	return $stringTratada;
-	FecharConexao($connect);
+	fecharConexao($connect);
 }
 
-function acessoRestrito($nivelUsuarioPermitido){
+function acessoRestrito($nivelUsuarioPermitido)
+{
 	global $connect;
 
 	if (!isset($_SESSION)) {
 		session_start();
 	}
-	if(!isset($_SESSION['logado']) && !isset($_SESSION['nivelAcesso'])){
+	if (!isset($_SESSION['logado']) && !isset($_SESSION['nivelAcesso'])) {
 		header('Location: ../login.php');
-	}else{
-		if($_SESSION['nivelAcesso'] != $nivelUsuarioPermitido){
-			header("Location: ../login.php?login=".$_SESSION['nivelAcesso']."");
+	} else {
+		if ($_SESSION['nivelAcesso'] != $nivelUsuarioPermitido) {
+			header("Location: ../login.php?login=" . $_SESSION['nivelAcesso'] . "");
 		}
 	}
 }
 
-function direcionaParaPainel(){
+function direcionaParaPainel()
+{
 	$nivel = $_SESSION['nivelAcesso'];
-	
-	if($nivel == 0){
+
+	if ($nivel == 0) {
 		header("Location: financeiro/");
-	}else if($nivel == 1){
+	} else if ($nivel == 1) {
 		header("Location: admin/");
 	}
 }
 
-function getPainel(){
+function getPainel()
+{
 	$nivel = $_SESSION['nivelAcesso'];
-	
-	if($nivel == 0){
+
+	if ($nivel == 0) {
 		return "financeiro";
-	}else if($nivel == 1){
+	} else if ($nivel == 1) {
 		return "admin";
 	}
 }
 
-function verifyCPF($cpf){
+function verifyCPF($cpf)
+{
 	$cpf = "$cpf";
 	if (strpos($cpf, "-") !== false) {
 		$cpf = str_replace("-", "", $cpf);
@@ -100,4 +117,44 @@ function verifyCPF($cpf){
 		$returner = false;
 	}
 	return $returner;
+}
+
+function verifySubscribe($cpf){
+	$conection = conection();
+	$query = mysqli_query($conection, "SELECT * FROM inscritos WHERE cpf='$cpf'");
+	if (mysqli_num_rows($query) >= 1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function subscribe($nome, $email, $cpf, $tel, $periodo, $turno){
+	$conection = conection();
+	$sql = "INSERT INTO inscritos (nome, email, cpf, tel, periodo, turno, status) 
+          VALUES('$nome', '$email', '$cpf', '$tel', '$periodo', '$turno', 0)";
+
+	if (mysqli_query($conection, $sql)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function userLogin($email, $cpf){
+	$conection = conection();
+  $query = mysqli_query($conection, "SELECT * FROM inscritos WHERE email='$email' and cpf='$cpf'");
+  if(mysqli_num_rows($query) >= 1){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+function getIDSubscribe($email, $cpf){
+	$conection = conection();
+  $query = mysqli_query($conection, "SELECT * FROM inscritos WHERE email='$email' and cpf='$cpf'");
+  $row = mysqli_fetch_array($query);
+  $id_subscribe = $row['id_inscritos'];
+  return $id_subscribe;
 }

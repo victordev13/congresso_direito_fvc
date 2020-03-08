@@ -1,16 +1,123 @@
 <?php
 require_once '../functions.php';
+include('./checkLogin.php');
 
 $erro = "";
 $mensagem = "";
 
-if (isset($_POST['login'])) {
-  $email = formata($_POST['email-login']);
-  $cpf = formatarCPF($_POST['cpf-login']);
-  if (verifyCPF($cpf)) {
-  } else {
-    $erro = "CPF inválido!";
+@session_start();
+
+function getNome()
+{
+  $conection = conection();
+  $id_subscribe = $_SESSION['id_subscribe'];
+  $query = mysqli_query($conection, "SELECT nome FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $row = mysqli_fetch_array($query);
+  $curso = $row['nome'];
+  return $curso;
+}
+
+function getEmail()
+{
+  $conection = conection();
+  $id_subscribe = $_SESSION['id_subscribe'];
+  $query = mysqli_query($conection, "SELECT email FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $row = mysqli_fetch_array($query);
+  $curso = $row['email'];
+  return $curso;
+}
+
+function getPeriodo()
+{
+  $conection = conection();
+  $id_subscribe = $_SESSION['id_subscribe'];
+  $query = mysqli_query($conection, "SELECT periodo FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $row = mysqli_fetch_array($query);
+  $periodo = $row['periodo'];
+
+  switch ($periodo) {
+    case 1:
+      $periodo = 'Primeiro';
+      break;
+    case 2:
+      $periodo = 'Segundo';
+      break;
+    case 3:
+      $periodo = 'Terceiro';
+      break;
+    case 4:
+      $periodo = 'Quarto';
+      break;
+    case 5:
+      $periodo = 'Quinto';
+      break;
+    case 6:
+      $periodo = 'Sexto';
+      break;
+    case 7:
+      $periodo = 'Sétimo';
+      break;
+    case 8:
+      $periodo = 'Oitavo';
+      break;
+    case 9:
+      $periodo = 'Nono';
+      break;
+    case 10:
+      $periodo = 'Décimo';
+      break;
+    default:
+      $periodo = 'Visitante';
   }
+
+  return $periodo;
+}
+
+function getTurno()
+{
+  $conection = conection();
+  $id_subscribe = $_SESSION['id_subscribe'];
+  $query = mysqli_query($conection, "SELECT turno FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $row = mysqli_fetch_array($query);
+  $turno = $row['turno'];
+
+  switch ($turno) {
+    case 1:
+      $turno = '<td>Matutino</td>';
+      break;
+    case 2:
+      $turno = '<td>Noturno</td>';
+      break;
+    default:
+      $turno = '';
+  }
+
+  return $turno;
+}
+
+function getStatus()
+{
+  $conection = conection();
+  $id_subscribe = $_SESSION['id_subscribe'];
+  $query = mysqli_query($conection, "SELECT status FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $row = mysqli_fetch_array($query);
+  $status = $row['status'];
+
+  switch ($status) {
+    case 1:
+      $status = '<span class="btn btn-success btn-xs btn-fill">Pago</span>';
+      break;
+    case 2:
+      $status = '<span class="btn btn-success btn-xs btn-fill">Concluido</span>';
+      break;
+    case 3:
+      $status = '<span class="btn btn-danger btn-xs btn-fill">Cancelado</span>';
+      break;
+    default:
+      $status = '<span class="btn btn-info btn-xs btn-fill">Aguardando pagamento</span>';
+  }
+
+  return $status;
 }
 
 ?>
@@ -36,7 +143,6 @@ if (isset($_POST['login'])) {
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
   <link href="../assets/css/themify-icons.css" rel="stylesheet">
-  <script src="../js/functions.js"></script>
 
 </head>
 
@@ -124,24 +230,21 @@ if (isset($_POST['login'])) {
                                   <th scope="col">Nome</th>
                                   <th scope="col">Email</th>
                                   <th scope="col">Período</th>
-                                  <th scope="col">Turno</th>
+                                  <?php
+                                  if (!getTurno() == '') {
+                                    echo '<th scope="col">Turno</th>';
+                                  }
+                                  ?>
                                   <th scope="col">Status</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
-                                  <th scope="row">Usuário da Silva</th>
-                                  <td>usuário@email.com</td>
-                                  <td>Primeiro</td>
-                                  <td>Noturno</td>
-                                  <td>
-                                    <!--
-                                    <span class="btn btn-success btn-xs btn-fill">Pago</span>
-                                    <span class="btn btn-danger btn-xs btn-fill">Estornado</span>
-                                    <span class="btn btn-success btn-xs btn-fill">Concluido</span>
-                                    -->
-                                    <span class="btn btn-info btn-xs btn-fill">Aguardando pagamento</span>
-                                  </td>
+                                  <th scope="row"><?php echo getNome(); ?></th>
+                                  <td><?php echo getEmail(); ?></td>
+                                  <td><?php echo getPeriodo(); ?></td>
+                                  <?php echo getTurno(); ?>
+                                  <td><?php echo getStatus(); ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -149,8 +252,8 @@ if (isset($_POST['login'])) {
                           <div class="col-sm-8 col-sm-offset-1">
                             <div class="col-sm-5 col-sm-offset-2">
                               <div class="choice active" data-toggle="wizard-checkbox">
-                                <input type="checkbox" name="jobb" value="Crachar" checked="checked">
-                                <div class="card card-checkboxes card-hover-effect">
+                                <input  type="checkbox" name="jobb" value="Crachar" checked="checked">
+                                <div id="cracha" class="card card-checkboxes card-hover-effect">
                                   <i class="ti-id-badge"></i>
                                   <p>Baixar crachá</p>
                                 </div>
@@ -200,5 +303,6 @@ if (isset($_POST['login'])) {
 
 <!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
 <script src="../assets/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../js/user.js" type="text/javascript"></script>
 
 </html>

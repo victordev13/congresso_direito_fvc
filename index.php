@@ -5,39 +5,35 @@ require_once 'classes/participante.class.php';
 
 $erro = "";
 $mensagem = "";
-$login = "";
-
-if (isset($_POST['login'])) {
-    $email = formata($_POST['email-login']);
-    $cpf = formatarCPF($_POST['cpf-login']);
-
-    if (verifyCPF($cpf)) {
-        $login = Participante::login($email, $cpf);
-    }else {
-        $modal_erro = "CPF inválido!";
-    }
-}
 
 if (isset($_POST['inscrever'])) {
     $nome = formata($_POST['nome']);
     $email = formata($_POST['email']);
     $cpf = formatarCPF($_POST['cpf']);
-    $periodo = formata($_POST['periodo']);
-    $turno = "";
+    $tel = formata($_POST['tel']);
+    $periodo = $_POST['periodo'];
+
+    if (empty($_POST['turno'])) {
+        $turno = 0;
+    } else {
+        $turno = $_POST['turno'];
+    }
+
     if (verifyCPF($cpf)) {
-        if ($periodo = 0) {
-            $categoria = "visitante";
+        if (!verifySubscribe($cpf)) {
+            if (subscribe($nome, $email, $cpf, $tel, $periodo, $turno)) {
+
+                $id_subscribe = getIDSubscribe($email, $cpf);
+                @session_start();
+                $_SESSION['subscribe'] = true;
+                $_SESSION['id_subscribe'] = $id_subscribe;
+
+                header("location: user/index.php");
+            } else {
+                $erro = "Erro ao realizar Inscrição!";
+            }
         } else {
-            $categoria = "aluno";
-        }
-        if (!$turno == "") {
-            $turno = formata($_POST['turno']);
-        }
-        $retorno = Participante::cadastrar($nome, $email, $cpf, $categoria, $periodo, $turno);
-        if ($retorno) {
-            $mensagem = "Inscrição realizada com sucesso";
-        } else {
-            $erro = "Erro ao realizar Inscrição!";
+            $erro = "CPF já cadastrado!";
         }
     } else {
         $erro = "CPF inválido!";
@@ -102,8 +98,8 @@ if (isset($_POST['inscrever'])) {
                                             echo "</div>";
                                         }
                                         if (!$mensagem == "") {
-                                            echo "<div class='alert alert-warning alerta-sm' role='alert'>";
-
+                                            echo "<div class='alert alert-success alerta-sm' role='alert'>";
+                                            echo $mensagem;
                                             echo "</div>";
                                         }
                                         ?>
@@ -118,6 +114,10 @@ if (isset($_POST['inscrever'])) {
                                         <div class="form-group">
                                             <label>CPF</label>
                                             <input name="cpf" id="cpf" type="text" class="form-control" placeholder="123.456.789-10" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Telefone</label>
+                                            <input name="tel" id="tel" type="text" class="form-control" placeholder="(27) 99999-9999" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Perído ou Visitante</label><br>
@@ -140,8 +140,8 @@ if (isset($_POST['inscrever'])) {
                                             <label>Perído ou Visitante</label><br>
                                             <select class="form-control" id="turno" required name="turno">
                                                 <option selected disabled>Selecione...</option>
-                                                <option value="matutino">Matutino</option>
-                                                <option value="noturno">Noturno</option>
+                                                <option value="1">Matutino</option>
+                                                <option value="2">Noturno</option>
                                             </select>
                                         </div>
                                     </div>
@@ -156,7 +156,7 @@ if (isset($_POST['inscrever'])) {
                                 <div class="pull-right">
                                     <a href="user/login.php">
                                         <button type='button' id="btnInscrito" class="btn btn-default btn-fill">
-                                        Já sou inscrito
+                                            Já sou inscrito
                                         </button>
                                     </a>
                                 </div>
