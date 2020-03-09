@@ -1,6 +1,6 @@
 <?php
 $host="localhost"; 
-$username="root"; 
-$password=""; 
-$db_name="congresso";
+$username="phpmyadmin"; 
+$password="root"; 
+$db_name="evento_direito";
 ?>

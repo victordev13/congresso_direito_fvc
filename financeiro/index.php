@@ -11,14 +11,21 @@ if (isset($_POST['confirmar'])) {
         $cpf = formatarCPF($_POST['cpf']);   
         if(verifyCPF($cpf)){
             if(verifySubscribe($cpf)){
-                validaPagamento($cpf);
-                $showData = 1;
+                $res = verificaStatusPagamento($cpf);
+
+                if($res){
+                    $mensagem = "Inscrição já foi paga";
+                }else{
+                    validaPagamento($cpf);
+                    $showData = 1;
+                }
+               
             }else{
                 $erro = "CPF não encontrado, solicite a inscrição no site!";
             }
             
         }else{
-            $erro = "CPF Inválido, digitou corretamente";
+            $erro = "CPF Inválido, digite corretamente";
         }
     }
 }
@@ -49,8 +56,7 @@ if (isset($_POST['confirmar'])) {
                 <a href="../logout.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Sair</a>
             </div>
         </nav>
-        <body class="bg-dark">
-            <div class="row justify-content-center align-items-center" style="height:80vh; width: 100%;">
+                    <div class="row justify-content-center align-items-center" style="height:80vh; width: 100%;">
                 <div class="card" style="min-width: 600px">
                     <div class="card-body">
                         <div class="card-body">

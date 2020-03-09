@@ -71,6 +71,28 @@ function getNivelAcesso($usuario){
     FecharConexao($connect);
 }
 //  FUNÇÕES DO USUÁRIO FINANCEIRO //
+    function verificaStatusPagamento($cpf){
+        $connect = conection();
+
+        $sql = "SELECT status_pagamento FROM `inscritos` WHERE cpf = '$cpf'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado){
+            $row = mysqli_fetch_array($resultado);
+            $status_pagamento = $row['0'];
+            if($status_pagamento == "EFETUADO"){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+       
+
+        FecharConexao($connect);
+    }
+
     function validaPagamento($cpf){
         $connect = conection();
 
