@@ -1,5 +1,10 @@
 let cracha = document.getElementById('cracha');
 
 cracha.onclick = function(){
-  console.log('teste');
+}
+
+let certificado = document.getElementById('certificado');
+
+certificado.onclick = function(){
+  window.location = 'certified.php';
 }

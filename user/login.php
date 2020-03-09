@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
       @session_start();
       $_SESSION['subscribe'] = true;
       $_SESSION['id_subscribe'] = $id_subscribe;
-      
+
       header("location: index.php");
     } else {
       $erro = "Inscrição não encontrada!";
@@ -73,85 +73,83 @@ if (isset($_POST['login'])) {
             <!--      Wizard container        -->
             <div class="wizard-container">
               <div class="card wizard-card" data-color="green" id="wizardProfile">
-                <form action="" method="">
-                  <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
-                  <div class="wizard-header text-center">
-                    <h3 class="wizard-title">Status</h3>
-                    <p class="category">Acompanhe o status da sua inscrição</p>
+                <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
+                <div class="wizard-header text-center">
+                  <h3 class="wizard-title">Status</h3>
+                  <p class="category">Acompanhe o status da sua inscrição</p>
+                </div>
+
+                <div class="wizard-navigation">
+                  <div class="progress-with-circle">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
                   </div>
+                  <ul>
+                    <li>
+                      <a href="../index.php" data-toggle="tab" aria-expanded="false">
+                        <div class="icon-circle checked">
+                          <i class="ti-user"></i>
+                        </div>
+                        INSCRIÇÃO
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="#" data-toggle="tab" aria-expanded="true">
+                        <div class="icon-circle">
+                          <i class="ti-settings"></i>
+                        </div>
+                        STATUS
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <div class="icon-circle">
+                          <i class="ti-layout-cta-center"></i>
+                        </div>
+                        CERTIFICADO
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="about">
+                    <div class="row">
 
-                  <div class="wizard-navigation">
-                    <div class="progress-with-circle">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
-                    </div>
-                    <ul>
-                      <li>
-                        <a href="../index.php" data-toggle="tab" aria-expanded="false">
-                          <div class="icon-circle checked">
-                            <i class="ti-user"></i>
-                          </div>
-                          INSCRIÇÃO
-                        </a>
-                      </li>
-                      <li class="active">
-                        <a href="#" data-toggle="tab" aria-expanded="true">
-                          <div class="icon-circle">
-                            <i class="ti-settings"></i>
-                          </div>
-                          STATUS
-                        </a>
-                      </li>
-                      <li>
-                        <a>
-                          <div class="icon-circle">
-                            <i class="ti-layout-cta-center"></i>
-                          </div>
-                          CERTIFICADO
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="tab-content">
-                    <div class="tab-pane active" id="about">
-                      <div class="row">
+                      <h5 class="info-text">Preenchar os campos abaixo para visualizar o status da sua inscrição</h5>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <?php
+                        if (!$erro == "") {
+                          echo "<div class='alert alert-danger alerta-sm' role='alert'>";
+                          echo $erro;
+                          echo "</div>";
+                        }
+                        if (!$mensagem == "") {
+                          echo "<div class='alert alert-warning alerta-sm' role='alert'>";
 
-                        <h5 class="info-text">Preenchar os campos abaixo para visualizar o status da sua inscrição</h5>
-                        <div class="col-sm-10 col-sm-offset-1">
-                          <?php
-                          if (!$erro == "") {
-                            echo "<div class='alert alert-danger alerta-sm' role='alert'>";
-                            echo $erro;
-                            echo "</div>";
-                          }
-                          if (!$mensagem == "") {
-                            echo "<div class='alert alert-warning alerta-sm' role='alert'>";
-
-                            echo "</div>";
-                          }
-                          ?>
-                          <div class="form-group">
-                            <label>Email</label>
-                            <input name="email-login" type="email" class="form-control" placeholder="meu@email.com" required>
-                          </div>
-                          <div class="form-group" id="div-cpf">
-                            <label>CPF</label>
-                            <input name="cpf-login" id="cpf" type="text" class="form-control" placeholder="123.456.789.10" required>
-                          </div>
+                          echo "</div>";
+                        }
+                        ?>
+                        <div class="form-group">
+                          <label>Email</label>
+                          <input name="email-login" type="email" class="form-control" placeholder="meu@email.com" required>
+                        </div>
+                        <div class="form-group" id="div-cpf">
+                          <label>CPF</label>
+                          <input name="cpf-login" id="cpf" type="text" class="form-control" placeholder="123.456.789.10" required>
                         </div>
                       </div>
                     </div>
-                    <div class="wizard-footer">
-                      <div class="pull-center">
-                        <button type='submit' name="login" class="btn btn-success btn-fill btn-wd">Entrar</button>
-                      </div>
-                      <div class="clearfix"></div>
+                  </div>
+                  <div class="wizard-footer">
+                    <div class="pull-center">
+                      <button type='submit' name="login" class="btn btn-success btn-fill btn-wd">Entrar</button>
                     </div>
-                </form>
-              </div>
-            </div> <!-- wizard container -->
-          </div>
-        </div><!-- end row -->
-      </div> <!--  big container -->
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div> <!-- wizard container -->
+            </div>
+          </div><!-- end row -->
+        </div> <!--  big container -->
     </form>
 
   </main>

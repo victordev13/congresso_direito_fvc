@@ -1,16 +1,12 @@
 <?php
 require_once '../functions.php';
-$apresentação = "";
-$erro = "";
-$mensagem = "";
+include('./checkLogin.php');
 
-if (isset($_POST['login'])) {
-  $email = formata($_POST['email-login']);
-  $cpf = formatarCPF($_POST['cpf-login']);
-  if (verifyCPF($cpf)) {
-  } else {
-    $erro = "CPF inválido!";
-  }
+@session_start();
+
+$id_subscribe = $_SESSION['id_subscribe'];
+if (isset($_POST['baixar'])) {
+  header("location: gerar_certificado/gerador.php?id=".$id_subscribe);
 }
 
 ?>
@@ -52,13 +48,14 @@ if (isset($_POST['login'])) {
 
     <!-- removi o menu desse arquivo pois algumas telas precisam somente da inclusao de js e css-->
     <!--   Big container   -->
+    
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <!--      Wizard container        -->
           <div class="wizard-container">
             <div class="card wizard-card" data-color="green" id="wizardProfile">
-              <form action="" method="">
+              <form action="" method="POST">
                 <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
                 <div class="wizard-header text-center">
                   <h3 class="wizard-title">Certificado</h3>
@@ -96,41 +93,18 @@ if (isset($_POST['login'])) {
                     </li>
                   </ul>
                 </div>
-                <div class="tab-content">
-                  <div class="tab-pane active" id="about">
-                    <div class="row">
-                      <h5 class="info-text">O certificado estará disponível para download no final da apresentação!</h5>
-                      <?php
-                      $apresentação = false;
-
-                      if ($apresentação) {
-                        echo '<div class="col-sm-8 col-sm-offset-2">
-                                  <div class="choice choice active" data-toggle="wizard-checkbox">
-                                    <input type="checkbox" name="crachar" value="Crachar">
-                                    <div class="card card-checkboxes card-hover-effect">
-                                      <i class="ti-download"></i>
-                                      <p>Baixar certificado</p>
-                                    </div>
-                                  </div>
-                                </div>';
-                      } else {
-                        echo '<div class="col-sm-8 col-sm-offset-2">
-                                  <div class="choice choice active" data-toggle="wizard-checkbox">
-                                    <input type="checkbox" name="crachar" value="Crachar">
-                                    <div class="card card-checkboxes card-hover-effect">
-                                      <i class="ti-loop"></i>
-                                      <p>Aguardando o final da apresentação...</p>
-                                    </div>
-                                  </div>
-                                </div>';
-                      }
-
-                      ?>
-
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="about">
+                      <div class="row">
+                        <h5 class="info-text">O certificado estará disponível para download no final da apresentação!</h5>
+                        <div class="col-sm-8 col-sm-offset-2">
+                          <div class="choice choice active" data-toggle="wizard-checkbox">
+                            <button type="submit" name="baixar" class="btn btn-primary btn-fill">BAIXAR CERTIFICADO</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-
                 <div class="clearfix"></div>
               </form>
             </div>

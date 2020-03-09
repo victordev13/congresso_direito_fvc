@@ -272,7 +272,7 @@ function codigoBarras()
                             <div class="col-sm-5">
                               <div class="choice active" data-toggle="wizard-checkbox">
                                 <input type="checkbox" name="jobb" value="Certificado" checked="checked">
-                                <div class="card card-checkboxes card-hover-effect">
+                                <div id="certificado" class="card card-checkboxes card-hover-effect">
                                   <i class="ti-layout-cta-center"></i>
                                   <p>Certificado</p>
                                 </div>
