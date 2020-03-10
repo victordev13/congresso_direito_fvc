@@ -80,7 +80,8 @@ function getNivelAcesso($usuario){
         if($resultado){
             $row = mysqli_fetch_array($resultado);
             $status_pagamento = $row['0'];
-            if($status_pagamento == "EFETUADO"){
+
+            if($status_pagamento == '1'){
                 return true;
             }else{
                 return false;
@@ -99,7 +100,7 @@ function getNivelAcesso($usuario){
         //INSERIR REGISTRO NA TABELA PAGAMENTO  E ALTERAR COLUNA DE STATUS DO INSCRITO
         registraPagamento($cpf);
 
-        $sql = "UPDATE inscritos SET status_pagamento='EFETUADO' WHERE cpf='$cpf'";
+        $sql = "UPDATE inscritos SET status_pagamento='1' WHERE cpf='$cpf'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado == 1){
@@ -130,6 +131,52 @@ function getNivelAcesso($usuario){
         }
         
     
+        FecharConexao($connect);
+    }
+
+    function getDataPagamento($cpf){
+        $connect = conection();
+
+        $sql = "SELECT status_pagamento FROM `inscritos` WHERE cpf = '$cpf'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado){
+            $row = mysqli_fetch_array($resultado);
+            $status_pagamento = $row['0'];
+
+            if($status_pagamento == '1'){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+       
+
+        FecharConexao($connect);
+    }
+
+    function getUsuarioPagamento($cpf){
+        $connect = conection();
+
+        $sql = "SELECT status_pagamento FROM `inscritos` WHERE cpf = '$cpf'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado){
+            $row = mysqli_fetch_array($resultado);
+            $status_pagamento = $row['0'];
+
+            if($status_pagamento == '1'){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+       
+
         FecharConexao($connect);
     }
     

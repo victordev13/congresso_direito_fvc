@@ -1,23 +1,24 @@
 <?php
 require_once '../functions.php';
 require_once '../adm_functions.php';
+require_once '../user_functions.php';
 acessoRestrito(0);
 
 $erro = "";
 $mensagem = "";
 
-if (isset($_POST['confirmar'])) {
+if (isset($_POST['buscar'])) {
     if(!empty($_POST['cpf'])){     
         $cpf = formatarCPF($_POST['cpf']);   
         if(verifyCPF($cpf)){
             if(verifySubscribe($cpf)){
                 $res = verificaStatusPagamento($cpf);
-
-                if($res){
-                    $mensagem = "Inscrição já foi paga";
+                if($res == true){
+                    $mensagem = "Pagamento já foi realizado";
+                    $showInfoPagamento = 1;
                 }else{
-                    validaPagamento($cpf);
                     $showData = 1;
+                    $showButtonConfirmar = 1;
                 }
                
             }else{
@@ -28,6 +29,11 @@ if (isset($_POST['confirmar'])) {
             $erro = "CPF Inválido, digite corretamente";
         }
     }
+}
+
+if(isset($_POST['confirmar'])){
+    validaPagamento($cpf);
+    $mensagem = "Pagamento Efetuado com Sucesso!"
 }
 ?>
 
@@ -60,10 +66,10 @@ if (isset($_POST['confirmar'])) {
                 <div class="card" style="min-width: 600px">
                     <div class="card-body">
                         <div class="card-body">
-                            <form method="POST" id="formLogin" name="formLogin" class="form-inline justify-content-center align-items-center">
+                            <form method="POST" id="formCPF" name="formCPF" class="form-inline justify-content-center align-items-center">
                                 <label for="cpf" class="mr-sm-2">CPF:</label>
                                 <input type="text" class="form-control mr-sm-3" id="cpf"  name="cpf" placeholder="123.456.789-10">
-                                <button type="submit" class="btn btn-fvc mb-4" name="confirmar">Confirmar Pagamento</button>
+                                <button type="submit" class="btn btn-fvc mb-4" name="buscar">Buscar</button>
                             </form>
                             <?php
                             if (!$erro == "") {
@@ -85,14 +91,14 @@ if (isset($_POST['confirmar'])) {
                                         <tr>
                                         <th scope="col">Nome</th>
                                         <th scope="col">Período/Visitante</th>
-                                        <th scope="col">Pagamento</th>
+                                        <th scope="col">Status Pagamento</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                         <?php
 
-                                        echo "<th>".$nomeParticipante."</td>";
+                                        echo "<th>".getNome($cpf)."</td>";
                                         echo "<td>".$periodoParticipante."</td>";
                                         echo "<td>".$statusPagamentoParticipante."</td>";
 
@@ -102,6 +108,33 @@ if (isset($_POST['confirmar'])) {
                                     </tbody>
                                     </table>
                                 <?php } ?>
+<!-- DADOS DO PAGAMENTO REALIZADO-->
+                                <?php if(isset($showInfoPagamento)) { ?>
+                                    <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">Nome</th>
+                                        <th>Data/Hora</th>
+                                        <th>Usuário</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <?php
+
+                                        echo "<th>".getNome($cpf)."</td>";
+                                        echo "<td>".getDataPagamento()."</td>";
+
+                                        ?>
+                                        </tr>
+
+                                    </tbody>
+                                    </table>
+                                <?php } ?>
+
+                                <?php if(isset($showButtonConfirmar)) { ?>
+                                    <form method="POST"><button type="submit" class="btn btn-fvc mb-4" name="confirmar">Confirmar Pagamento</button></form>
+                               <?php }?>
                             </div>
                         </div>
                     </div>
