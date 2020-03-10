@@ -240,12 +240,12 @@ function getStatus()
                               </li>
                             </ul>
                           </div>
-                          <div class="codigobarras">
-                            <div>
-                              <?php
-                              fbarcode(getCPF()); // basta chamar essa fun��o com o valor do c�digo para gerar o c�digo de barras 
-                              ?>
-                            </div>
+                            <div class="codigobarras">
+                              <div>
+                                <?php
+                                fbarcode(getCPF()); // basta chamar essa fun��o com o valor do c�digo para gerar o c�digo de barras 
+                                ?>
+                              </div>
                             <div>
                               <?php echo getCPF(); ?>
                             </div>
