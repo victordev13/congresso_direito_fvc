@@ -5,49 +5,17 @@ require('fpdf/alphapdf.php');
 require('PHPMailer/class.phpmailer.php');
 require_once '../../functions.php';
 
-function userID(){
-  return htmlspecialchars($_GET["id"]);
-}
+@session_start();
 
-function getNome()
-{
-  $conection = conection();
-  $id_subscribe = userID();
-  $query = mysqli_query($conection, "SELECT nome FROM inscritos WHERE id_inscritos='$id_subscribe'");
-  $row = mysqli_fetch_array($query);
-  $curso = $row['nome'];
-  return $curso;
-}
+$id_subscribe = $_SESSION['id_subscribe'];
 
-function getEmail()
-{
-  $conection = conection();
-  $id_subscribe = userID();
-  $query = mysqli_query($conection, "SELECT email FROM inscritos WHERE id_inscritos='$id_subscribe'");
-  $row = mysqli_fetch_array($query);
-  $curso = $row['email'];
-  return $curso;
-}
-
-function getCPF()
-{
-  $conection = conection();
-  $id_subscribe = userID();
-  $query = mysqli_query($conection, "SELECT cpf FROM inscritos WHERE id_inscritos='$id_subscribe'");
-  $row = mysqli_fetch_array($query);
-  $cpf = $row['cpf'];
-  return $cpf;
-}
-
-function getStatus()
-{
-  $conection = conection();
-  $id_subscribe = userID();
-  $query = mysqli_query($conection, "SELECT status FROM inscritos WHERE id_inscritos='$id_subscribe'");
-  $row = mysqli_fetch_array($query);
-  $status = $row['status'];
-  return $status;
-}
+$conection = conection();
+$query = mysqli_query($conection, "SELECT * FROM inscritos WHERE id_inscritos='$id_subscribe'");
+$row = mysqli_fetch_array($query);
+$nome = $row['nome'];
+$email = $row['email'];,
+$cpf = $row['cpf'];
+$status = $row['status'];
 
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
 $empresa  = "Universidade Vale do Cricaré";
@@ -84,7 +52,7 @@ $pdf->MultiCell(265, 10, $texto1, '', 'L', 0); // Tamanho width e height e posi�
 // Mostrar o nome
 $pdf->SetFont('Arial', '', 30); // Tipo de fonte e tamanho
 $pdf->SetXY(20,86); //Parte chata onde tem que ficar ajustando a posição X e Y
-$pdf->MultiCell(265, 10, getNome(), '', 'C', 0); // Tamanho width e height e posição
+$pdf->MultiCell(265, 10, $nome, '', 'C', 0); // Tamanho width e height e posição
 
 // Mostrar o corpo
 $pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
@@ -101,11 +69,11 @@ $pdfdoc = $pdf->Output('', 'S');
 // ******** Agora vai enviar o e-mail pro usuário contendo o anexo
 // ******** e também mostrar na tela para caso o e-mail não chegar
 
-$certificado="arquivos/".getCPF().".pdf"; //atribui a variável $certificado com o caminho e o nome do arquivo que será salvo (vai usar o CPF digitado pelo usuário como nome de arquivo)
+$certificado="arquivos/".$cpf.".pdf"; //atribui a variável $certificado com o caminho e o nome do arquivo que será salvo (vai usar o CPF digitado pelo usuário como nome de arquivo)
 $pdf->Output($certificado,'F'); //Salva o certificado no servidor (verifique se a pasta "arquivos" tem a permissão necessária)
 // Utilizando esse script provavelmente o certificado ficara salvo em www.seusite.com.br/gerar_certificado/arquivos/999.999.999-99.pdf (o 999 representa o CPF digitado pelo usuário)
 
-if(getStatus() == 1){
+if($status == 1){
   $pdf->Output(); // Mostrar o certificado na tela do navegador
 }else{
   echo "Erro ao gerar certificado";

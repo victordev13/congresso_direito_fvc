@@ -4,9 +4,8 @@ include('./checkLogin.php');
 
 @session_start();
 
-$id_subscribe = $_SESSION['id_subscribe'];
 if (isset($_POST['baixar'])) {
-  header("location: gerar_certificado/gerador.php?id=".$id_subscribe);
+  header("location: gerar_certificado/gerador.php");
 }
 
 ?>
