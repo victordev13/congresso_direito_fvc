@@ -1,9 +1,8 @@
 <?php
 setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese' );
 date_default_timezone_set( 'America/Sao_Paulo' );
-require('fpdf/alphapdf.php');
-require('PHPMailer/class.phpmailer.php');
-require_once '../../functions.php';
+require('gerar_certificado/fpdf/alphapdf.php');
+require_once '../functions.php';
 
 @session_start();
 
@@ -13,7 +12,7 @@ $conection = conection();
 $query = mysqli_query($conection, "SELECT * FROM inscritos WHERE id_inscritos='$id_subscribe'");
 $row = mysqli_fetch_array($query);
 $nome = $row['nome'];
-$email = $row['email'];,
+$email = $row['email'];
 $cpf = $row['cpf'];
 $status = $row['status'];
 
@@ -39,7 +38,7 @@ $pdf->AddPage('L');
 $pdf->SetLineWidth(1.5);
 
 // desenha a imagem do certificado
-$pdf->Image('certificado.jpg',0,0,295);
+$pdf->Image('gerar_certificado/certificado.jpg',0,0,295);
 
 // opacidade total
 $pdf->SetAlpha(1);
@@ -70,8 +69,6 @@ $pdfdoc = $pdf->Output('', 'S');
 // ******** e também mostrar na tela para caso o e-mail não chegar
 
 $certificado="arquivos/".$cpf.".pdf"; //atribui a variável $certificado com o caminho e o nome do arquivo que será salvo (vai usar o CPF digitado pelo usuário como nome de arquivo)
-$pdf->Output($certificado,'F'); //Salva o certificado no servidor (verifique se a pasta "arquivos" tem a permissão necessária)
-// Utilizando esse script provavelmente o certificado ficara salvo em www.seusite.com.br/gerar_certificado/arquivos/999.999.999-99.pdf (o 999 representa o CPF digitado pelo usuário)
 
 if($status == 1){
   $pdf->Output(); // Mostrar o certificado na tela do navegador

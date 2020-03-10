@@ -8,16 +8,6 @@ $mensagem = "";
 
 @session_start();
 
-function getNome()
-{
-  $conection = conection();
-  $id_subscribe = $_SESSION['id_subscribe'];
-  $query = mysqli_query($conection, "SELECT nome FROM inscritos WHERE id_inscritos='$id_subscribe'");
-  $row = mysqli_fetch_array($query);
-  $curso = $row['nome'];
-  return $curso;
-}
-
 function getEmail()
 {
   $conection = conection();
@@ -100,9 +90,9 @@ function getStatus()
 {
   $conection = conection();
   $id_subscribe = $_SESSION['id_subscribe'];
-  $query = mysqli_query($conection, "SELECT status_pagamento FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $query = mysqli_query($conection, "SELECT status FROM inscritos WHERE id_inscritos='$id_subscribe'");
   $row = mysqli_fetch_array($query);
-  $status = $row['status_pagamento'];
+  $status = $row['status'];
 
   switch ($status) {
     case 1:

@@ -4,9 +4,17 @@ include('./checkLogin.php');
 
 @session_start();
 
-if (isset($_POST['baixar'])) {
-  header("location: gerar_certificado/gerador.php");
+function getStatus()
+{
+  $conection = conection();
+  $id_subscribe = $_SESSION['id_subscribe'];
+  $query = mysqli_query($conection, "SELECT status FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $row = mysqli_fetch_array($query);
+  $status = $row['status'];
+
+  return $status;
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -47,7 +55,7 @@ if (isset($_POST['baixar'])) {
 
     <!-- removi o menu desse arquivo pois algumas telas precisam somente da inclusao de js e css-->
     <!--   Big container   -->
-    
+
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
@@ -92,18 +100,46 @@ if (isset($_POST['baixar'])) {
                     </li>
                   </ul>
                 </div>
-                  <div class="tab-content">
-                    <div class="tab-pane active" id="about">
-                      <div class="row">
-                        <h5 class="info-text">O certificado estará disponível para download no final da apresentação!</h5>
-                        <div class="col-sm-8 col-sm-offset-2">
-                          <div class="choice choice active" data-toggle="wizard-checkbox">
-                            <button type="submit" name="baixar" class="btn btn-primary btn-fill">BAIXAR CERTIFICADO</button>
-                          </div>
-                        </div>
-                      </div>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="about">
+                    <div class="row">
+                      <?php
+                      $apresentação = true;
+
+                      if ($apresentação && getStatus() == 1) {
+                        echo '<h5 class="info-text">O certificado está disponível para download, clique no botão abaixo para baixá-lo!</h5>
+                              <div class="col-sm-8 col-sm-offset-2">
+                                  <div class="choice choice active" data-toggle="wizard-checkbox">
+                                    <input type="checkbox" name="crachar" value="Crachar">
+                                    <div id="certificado" class="card card-checkboxes card-hover-effect">
+                                      <i class="ti-download"></i>
+                                      <p>Baixar certificado</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <script>
+                                let certificado = document.getElementById("certificado");
+                                certificado.onclick = function(){
+                                  window.location = "gerador.php";
+                                }
+                                </script>';
+                      } else {
+                        echo '<h5 class="info-text">O certificado estará disponível para download no final da apresentação!</h5>
+                                <div class="col-sm-8 col-sm-offset-2">
+                                  <div class="choice choice active" data-toggle="wizard-checkbox">
+                                    <input type="checkbox" name="crachar" value="Crachar">
+                                    <div class="card card-checkboxes card-hover-effect">
+                                      <i class="ti-loop"></i>
+                                      <p>Aguardando o final da apresentação...</p>
+                                    </div>
+                                  </div>
+                                </div>';
+                      }
+
+                      ?>
                     </div>
                   </div>
+                </div>
                 <div class="clearfix"></div>
               </form>
             </div>
