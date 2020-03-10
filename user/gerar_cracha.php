@@ -1,6 +1,7 @@
 <?php
 require_once 'checkLogin.php';
 require_once 'src/dompdf/autoload.inc.php';
+require_once '../user_functions.php';
 
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
@@ -10,15 +11,14 @@ $dompdf = new Dompdf();
 
 $nome = "nome";
 $categoria = "categoria";
-$codigoDeBarra = "codigo de barra";
 
 $html = "
-    <link type='text/css' href='/absolute/path/to/pdf.css' rel='stylesheet'/>
+    <link type='text/css' href='pdf.css' rel='stylesheet'/>
     <div class='cracha' style='background-image: url('src/model.png');
     width: 200px;'>
         <div class='label'>".$nome."</div>
         <div class='label'>".$categoria."</div>
-        <div class='codigoDeBarra'>$codigoDeBarra</div>
+        <div class='codigoDeBarra'>".fbarcode(getCPF())."</div>
     </div>
 ";
 $dompdf->loadHtml($html);

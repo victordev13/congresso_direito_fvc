@@ -2,6 +2,7 @@
 require_once '../functions.php';
 require_once '../user_functions.php';
 include('./checkLogin.php');
+
 $erro = "";
 $mensagem = "";
 
@@ -118,16 +119,6 @@ function getStatus()
   }
 
   return $status;
-}
-
-function codigoBarras()
-{
-  $conection = conection();
-  $id_subscribe = $_SESSION['id_subscribe'];
-  $query = mysqli_query($conection, "SELECT cpf FROM inscritos WHERE id_inscritos='$id_subscribe'");
-  $row = mysqli_fetch_array($query);
-  $cpf = $row['cpf'];
-  return $cpf;
 }
 
 ?>
@@ -252,19 +243,19 @@ function codigoBarras()
                           <div class="codigobarras">
                             <div>
                               <?php
-                              fbarcode(codigoBarras()); // basta chamar essa fun��o com o valor do c�digo para gerar o c�digo de barras 
+                              fbarcode(getCPF()); // basta chamar essa fun��o com o valor do c�digo para gerar o c�digo de barras 
                               ?>
                             </div>
                             <div>
-                              <?php echo codigoBarras(); ?>
+                              <?php echo getCPF(); ?>
                             </div>
                           </div>
                           <div class="col-sm-8 col-sm-offset-2">
                             <div class="col-sm-5 col-sm-offset-1">
                               <div class="choice active" data-toggle="wizard-checkbox">
-                                <input type="checkbox" name="jobb" value="Crachar" checked="checked">
+                                <input type="checkbox" name="jobb" value="Cracha" checked="checked">
                                 <div id="cracha" class="card card-checkboxes card-hover-effect">
-                                  <i class="ti-id-badge"></i>
+                                  <i class="ti-layout-cta-center"></i>
                                   <p>Baixar crachá</p>
                                 </div>
                               </div>
