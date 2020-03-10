@@ -2,3 +2,4 @@
 *.swo
 
 db/connect.php
+db/connect.php

@@ -1,10 +1,6 @@
 <?php
 require_once 'functions.php';
 
-	function imprimirCracha(){
-		
-	}
-
 	function getCPF(){
 		$conection = conection();
 		$id_subscribe = $_SESSION['id_subscribe'];
@@ -12,6 +8,19 @@ require_once 'functions.php';
 		$row = mysqli_fetch_array($query);
 		$cpf = $row['cpf'];
 		return $cpf;
+	}
+
+	function getNome(){
+		$conection = conection();
+		$id_subscribe = $_SESSION['id_subscribe'];
+		$query = mysqli_query($conection, "SELECT nome FROM inscritos WHERE id_inscritos='$id_subscribe'");
+		$row = mysqli_fetch_array($query);
+		$nome = $row['nome'];
+		return $nome;
+	}
+		
+	function getCategoria(){
+		
 	}
 		
 	function fbarcode($valor)
