@@ -14,7 +14,7 @@ $dompdf->set_base_path('src/');
 $nome = "nome";
 $categoria = "categoria";
 
-$html = file_get_contents("src/cracha.html");
+$html = file_get_contents("src/cracha.php");
 
 $dompdf->loadHtml($html);
 

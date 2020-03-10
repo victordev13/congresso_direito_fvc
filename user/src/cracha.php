@@ -1,3 +1,9 @@
+<?php
+
+$nome = "Victor de Carvalho Silva";
+$categoria = "Estudante/1°Período";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +14,17 @@
     <style>
     @page{}
         body{
-            background: url('src/model.png');
-            background-size: cover;
+
             font-family: Arial, Helvetica, sans-serif;
         }
         div.cracha{
-            width: 200px;
-            height: 300px;
-            color: blue;
+            background: url('model.png');
+            background-size: cover;
+            width: 316px;
+            height: 443px;
         }
-        
-        div.label{
-            
+        div.campos{
+            margin-top: 100px;
         }
         
         div.codigoBarra{
@@ -31,10 +36,11 @@
 </head>
 <body>
     <div class='cracha'>
-        <div class='label'>".$nome."</div>
-        <div class='label'>".$categoria."</div>
-        <div class='codigoDeBarra'>
-        <img src='src/model.png'>
+        <div class="campos">
+            <div class='label'><?php echo $nome ?></div>
+            <div class='label'><?php echo $categoria ?></div>
+            <div class='codigoDeBarra'>
+        </div>
         </div>
     </div>
 </body>
