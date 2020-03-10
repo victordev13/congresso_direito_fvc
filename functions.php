@@ -133,10 +133,10 @@ function verifySubscribe($cpf)
 
 function subscribe($nome, $email, $cpf, $tel, $periodo, $turno)
 {
-	$codigobarra = rand(100000000000000000, 999999999999999999);
+	
 	$conection = conection();
-	$sql = "INSERT INTO inscritos (nome, email, cpf, tel, periodo, turno, status, codigobarra) 
-          VALUES('$nome', '$email', '$cpf', '$tel', '$periodo', '$turno', 0, '$codigobarra')";
+	$sql = "INSERT INTO inscritos (nome, email, cpf, tel, periodo, turno, status) 
+          VALUES('$nome', '$email', '$cpf', '$tel', '$periodo', '$turno', 0)";
 
 	if (mysqli_query($conection, $sql)) {
 		return true;

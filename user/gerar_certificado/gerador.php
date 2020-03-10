@@ -52,6 +52,8 @@ function getStatus()
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
 $empresa  = "Universidade Vale do Cricaré";
 $curso    = "Congresso de Direito da FVC";
+
+//inserir funcao para pegar data e calcular horas presentes
 $data     = "08/03/2020";
 $carga_h  = "10 horas";
 
@@ -67,7 +69,6 @@ $pdf = new AlphaPDF();
 $pdf->AddPage('L');
 
 $pdf->SetLineWidth(1.5);
-
 
 // desenha a imagem do certificado
 $pdf->Image('certificado.jpg',0,0,295);
@@ -97,22 +98,8 @@ $pdf->MultiCell(165, 10, $texto3, '', 'L', 0); // Tamanho width e height e posi�
 
 $pdfdoc = $pdf->Output('', 'S');
 
-
-
 // ******** Agora vai enviar o e-mail pro usuário contendo o anexo
 // ******** e também mostrar na tela para caso o e-mail não chegar
-
-$subject = 'Seu Certificado do Workshop';
-$messageBody = "Olá getNome()<br><br>É com grande prazer que entregamos o seu certificado.<br>Ele está em anexo nesse e-mail.<br><br>Atenciosamente,<br>Lincoln Borges<br><a href='http://www.lnborges.com.br'>http://www.lnborges.com.br</a>";
-
-
-$mail = new PHPMailer();
-$mail->SetFrom("certificado@lnborges.com.br", "Certificado");
-$mail->Subject    = $subject;
-$mail->MsgHTML(utf8_decode($messageBody));
-$mail->AddAddress(getEmail()); 
-$mail->addStringAttachment($pdfdoc, 'certificado.pdf');
-$mail->Send();
 
 $certificado="arquivos/".getCPF().".pdf"; //atribui a variável $certificado com o caminho e o nome do arquivo que será salvo (vai usar o CPF digitado pelo usuário como nome de arquivo)
 $pdf->Output($certificado,'F'); //Salva o certificado no servidor (verifique se a pasta "arquivos" tem a permissão necessária)

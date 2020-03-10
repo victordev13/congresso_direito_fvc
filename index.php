@@ -136,7 +136,7 @@ if (isset($_POST['inscrever'])) {
                                             </select>
                                         </div>
                                         <div class="form-group" style="display:none" id="div_turno">
-                                            <label>Perído ou Visitante</label><br>
+                                            <label>Turno</label><br>
                                             <select class="form-control" id="turno" required name="turno">
                                                 <option selected disabled>Selecione...</option>
                                                 <option value="1">Matutino</option>
