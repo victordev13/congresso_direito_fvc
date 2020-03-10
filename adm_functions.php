@@ -117,7 +117,7 @@ function getNivelAcesso($usuario){
         $connect = conection();
 
         $id_usuario = getIdAdmin();
-        $id_inscrito = "SELECT id_incritos FROM inscritos WHERE cpf='$cpf'";
+        $id_inscrito = getIdUsuario($cpf);
 
         $sql = "INSERT INTO `pagamento` (`id_pagamento`, `id_usuario`, `id_inscritos`, `horario`) VALUES (NULL, '$id_usuario', '$id_inscrito', CURRENT_TIMESTAMP)";
         $resultado = mysqli_query($connect, $sql);
@@ -159,15 +159,35 @@ function getNivelAcesso($usuario){
 
     function getUsuarioPagamento($cpf){
         $connect = conection();
-
-        $sql = "SELECT status_pagamento FROM `inscritos` WHERE cpf = '$cpf'";
+        $id_inscrito = getIdInscrito($cpf);
+         
+        $sql = "SELECT usuario FROM `pagamento` INNER JOIN usuario ON id_usuario = id_usuario WHERE 'id_inscrito' = '$id_inscrito'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
             $row = mysqli_fetch_array($resultado);
-            $status_pagamento = $row['0'];
+            $usuario = $row['0'];
 
-            if($status_pagamento == '1'){
+            return $usuario;
+        }else{
+            return false;
+        }
+       
+
+        FecharConexao($connect);
+    }
+
+    function getIdUsuario($cpf){
+        $connect = conection();
+
+        $sql = "SELECT id_incritos FROM inscritos WHERE cpf='$cpf'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado){
+            $row = mysqli_fetch_array($resultado);
+            $id_usuario = $row['0'];
+
+            if(mysqli_num_rows($resultado)){
                 return true;
             }else{
                 return false;
@@ -175,7 +195,6 @@ function getNivelAcesso($usuario){
         }else{
             return false;
         }
-       
 
         FecharConexao($connect);
     }

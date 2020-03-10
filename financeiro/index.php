@@ -14,27 +14,30 @@ if (isset($_POST['buscar'])) {
             if(verifySubscribe($cpf)){
                 $res = verificaStatusPagamento($cpf);
                 if($res == true){
-                    $mensagem = "Pagamento já foi realizado";
+                    $erro = "Pagamento já realizado!";
                     $showInfoPagamento = 1;
+                    }else{
+                        $showData = 1;
+                        $showButtonConfirmar = 1;
+                    }
                 }else{
-                    $showData = 1;
-                    $showButtonConfirmar = 1;
+                    $erro = "CPF não encontrado, solicite a inscrição no site!";
                 }
-               
             }else{
-                $erro = "CPF não encontrado, solicite a inscrição no site!";
+                $erro = "CPF Inválido, digite corretamente";
             }
-            
-        }else{
-            $erro = "CPF Inválido, digite corretamente";
-        }
+    }
+}
+if(isset($_POST['confirmar'])){
+    $cpf = $_POST['cpf'];
+    
+    if(validaPagamento($cpf)){
+        $mensagem = "Pagamento Efetuado com Sucesso!";
+    }else{
+        $mensagem = "erro";
     }
 }
 
-if(isset($_POST['confirmar'])){
-    validaPagamento($cpf);
-    $mensagem = "Pagamento Efetuado com Sucesso!"
-}
 ?>
 
 <!DOCTYPE html>
@@ -99,8 +102,8 @@ if(isset($_POST['confirmar'])){
                                         <?php
 
                                         echo "<th>".getNome($cpf)."</td>";
-                                        echo "<td>".$periodoParticipante."</td>";
-                                        echo "<td>".$statusPagamentoParticipante."</td>";
+                                        echo "<td></td>";
+                                        echo "<td></td>";
 
                                         ?>
                                         </tr>
@@ -113,6 +116,7 @@ if(isset($_POST['confirmar'])){
                                     <table class="table table-striped">
                                     <thead>
                                         <tr>
+                                        Descricao:
                                         <th scope="col">Nome</th>
                                         <th>Data/Hora</th>
                                         <th>Usuário</th>
@@ -123,7 +127,8 @@ if(isset($_POST['confirmar'])){
                                         <?php
 
                                         echo "<th>".getNome($cpf)."</td>";
-                                        echo "<td>".getDataPagamento()."</td>";
+                                        echo "<td>".getDataPagamento($cpf)."</td>";
+                                        echo "<td>".getUsuarioPagamento($cpf)."</td>";
 
                                         ?>
                                         </tr>
@@ -133,7 +138,7 @@ if(isset($_POST['confirmar'])){
                                 <?php } ?>
 
                                 <?php if(isset($showButtonConfirmar)) { ?>
-                                    <form method="POST"><button type="submit" class="btn btn-fvc mb-4" name="confirmar">Confirmar Pagamento</button></form>
+                                    <form method="POST"><input type="hidden" name="cpf" id="confirma_cpf" value="<?php echo $cpf; ?>"><button type="submit" class="btn btn-fvc mb-4" name="confirmar">Confirmar Pagamento</button></form>
                                <?php }?>
                             </div>
                         </div>
