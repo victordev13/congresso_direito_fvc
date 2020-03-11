@@ -1,7 +1,7 @@
 <?php
-$host="localhost:3307"; 
-$username="root"; 
-$password=""; 
+$host="localhost"; 
+$username="phpmyadmin"; 
+$password="root"; 
 $db_name="congresso";
 
 ?>

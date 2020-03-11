@@ -1,0 +1,25 @@
+* {
+ margin: 0px auto;
+ font-family: 'Oswald', sans-serif;
+ font-size: 14px;
+}
+
+body { 
+    
+background-image: url("/imagens/fundo.jpg");
+
+}
+
+.fontmenor{
+    font-size: 10px;
+}
+
+#container{
+    margin-top: 10%;
+    padding: 20px;
+    width: 220px;
+    border: 0,9px solid;
+    -webkit-box-shadow: 3px 3px 34px -1px rgba(143,140,143,1);
+    -moz-box-shadow: 3px 3px 34px -1px rgba(143,140,143,1);
+    box-shadow: 3px 3px 34px -1px rgba(143,140,143,1);
+}
