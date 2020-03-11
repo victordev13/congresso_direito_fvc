@@ -25,7 +25,7 @@ if (isset($_POST['buscar'])) {
                     $erro = "CPF não encontrado, solicite a inscrição no site!";
                 }
             }else{
-                $erro = "CPF Inválido, digite corretamente";
+                $erro = "CPF Inválido, digite corretamente!";
             }
     }
 }

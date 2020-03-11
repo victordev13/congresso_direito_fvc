@@ -122,8 +122,6 @@ function getNivelAcesso($usuario){
         $sql = "INSERT INTO `log_pagamento` (`usuario`, `inscritos`, `horario`) VALUES ('$id_usuario', '$id_inscrito', CURRENT_TIMESTAMP())";
         $resultado = mysqli_query($connect, $sql);
 
-        echo $sql;
-        
         if($resultado){
             return true;
         }else{
@@ -153,7 +151,7 @@ function getNivelAcesso($usuario){
         $connect = conection();
         $id_inscrito = getIdInscrito($cpf);
 
-        $sql = "SELECT usuario FROM `log_pagamento` INNER JOIN usuario ON usuario.id = id_usuario WHERE log_pagamento.id_inscritos = '$id_inscrito'";
+        $sql = "SELECT u.usuario FROM `log_pagamento` AS l INNER JOIN usuario AS u ON idusuario = l.usuario WHERE l.inscritos = '$id_inscrito'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
@@ -174,7 +172,7 @@ function getNivelAcesso($usuario){
         $connect = conection();
         $id_inscrito = getIdInscrito($cpf);
 
-        $sql = "SELECT horario FROM `log_pagamento` WHERE log_pagamento.id_inscritos = '$id_inscrito'";
+        $sql = "SELECT horario FROM `log_pagamento` WHERE log_pagamento.inscritos = '$id_inscrito'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
@@ -195,7 +193,7 @@ function getNivelAcesso($usuario){
     function getIdUsuario($usuario){
         $connect = conection();
 
-        $sql = "SELECT id FROM usuario WHERE usuario='$usuario'";
+        $sql = "SELECT idusuario FROM usuario WHERE usuario='$usuario'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
@@ -250,10 +248,6 @@ function getNivelAcesso($usuario){
         }else{
             return "ERRO AO BUSCAR STATUS";
         }
-    }
-
-    function getDadosPagamento(){
-        
     }
 
     

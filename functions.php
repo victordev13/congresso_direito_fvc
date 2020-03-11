@@ -172,7 +172,9 @@ function getIdInscrito($cpf)
 	$query = mysqli_query($conection, "SELECT * FROM inscritos WHERE cpf='$cpf'");
 	$row = mysqli_fetch_array($query);
 	$id_inscrito = $row['id_inscritos'];
+
 	return $id_inscrito;
+
 }
 
 
