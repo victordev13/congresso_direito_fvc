@@ -19,7 +19,6 @@ $cpf = $row['cpf'];
 $status = $row['status'];
 
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
-$empresa  = "Universidade Vale do Cricaré";
 $curso    = "Congresso de Direito da FVC";
 
 //inserir funcao para pegar data e calcular horas presentes
@@ -27,9 +26,7 @@ $data     = "08/03/2020";
 $carga_h  = "10 horas";
 
 
-$texto1 = utf8_decode($empresa);
 $texto2 = utf8_decode("pela participação no ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
-$texto3 = utf8_decode("São Mateus, ".utf8_encode(strftime( '%d de %B de %Y', strtotime( date( 'Y-m-d' ) ) )));
 
 
 $pdf = new AlphaPDF();
@@ -45,14 +42,10 @@ $pdf->Image('gerar_certificado/certificado.jpg',0,0,295);
 // opacidade total
 $pdf->SetAlpha(1);
 
-// Mostrar texto no topo
-$pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
-$pdf->SetXY(109,46); //Parte chata onde tem que ficar ajustando a posição X e Y
-$pdf->MultiCell(265, 10, $texto1, '', 'L', 0); // Tamanho width e height e posição
 
 // Mostrar o nome
 $pdf->SetFont('Arial', '', 30); // Tipo de fonte e tamanho
-$pdf->SetXY(20,86); //Parte chata onde tem que ficar ajustando a posição X e Y
+$pdf->SetXY(20,105); //Parte chata onde tem que ficar ajustando a posição X e Y
 $pdf->MultiCell(265, 10, $nome, '', 'C', 0); // Tamanho width e height e posição
 
 // Mostrar o corpo
@@ -60,10 +53,6 @@ $pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
 $pdf->SetXY(20,110); //Parte chata onde tem que ficar ajustando a posição X e Y
 $pdf->MultiCell(265, 10, $texto2, '', 'C', 0); // Tamanho width e height e posição
 
-// Mostrar a data no final
-$pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
-$pdf->SetXY(32,172); //Parte chata onde tem que ficar ajustando a posição X e Y
-$pdf->MultiCell(165, 10, $texto3, '', 'L', 0); // Tamanho width e height e posição
 
 $pdfdoc = $pdf->Output('', 'S');
 

@@ -15,6 +15,46 @@ function getStatus()
   return $status;
 }
 
+date_default_timezone_set('America/Sao_Paulo');
+
+
+function liberarCertificado()
+{
+  $data_liberacao = "10-03-2020";
+  $today = date("d-m-Y");
+
+  if (strtotime($today) >= strtotime($data_liberacao) && getStatus() == 1) {
+      echo '<h5 class="info-text">O certificado está disponível para download, clique no botão abaixo para baixá-lo!</h5>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="choice choice active" data-toggle="wizard-checkbox">
+                  <input type="checkbox" name="crachar" value="Crachar">
+                  <div id="certificado" class="card card-checkboxes card-hover-effect">
+                    <i class="ti-download"></i>
+                      <p>Baixar certificado</p>
+                  </div>
+                </div>
+              </div>
+              <script>
+                let certificado = document.getElementById("certificado");
+                certificado.onclick = function(){
+                  window.location = "gerador.php";
+                }
+              </script>';
+    } else {
+      echo '<h5 class="info-text">O certificado estará disponível para download no final da apresentação!</h5>
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="choice choice active" data-toggle="wizard-checkbox">
+                <input type="checkbox" name="crachar" value="Crachar">
+                <div class="card card-checkboxes card-hover-effect">
+                  <i class="ti-loop"></i>
+                  <p>Aguardando o final da apresentação...</p>
+                </div>
+              </div>
+            </div>';
+    }
+  
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -104,37 +144,7 @@ function getStatus()
                   <div class="tab-pane active" id="about">
                     <div class="row">
                       <?php
-                      $apresentação = true;
-
-                      if ($apresentação && getStatus() == 1) {
-                        echo '<h5 class="info-text">O certificado está disponível para download, clique no botão abaixo para baixá-lo!</h5>
-                              <div class="col-sm-8 col-sm-offset-2">
-                                  <div class="choice choice active" data-toggle="wizard-checkbox">
-                                    <input type="checkbox" name="crachar" value="Crachar">
-                                    <div id="certificado" class="card card-checkboxes card-hover-effect">
-                                      <i class="ti-download"></i>
-                                      <p>Baixar certificado</p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <script>
-                                let certificado = document.getElementById("certificado");
-                                certificado.onclick = function(){
-                                  window.location = "gerador.php";
-                                }
-                                </script>';
-                      } else {
-                        echo '<h5 class="info-text">O certificado estará disponível para download no final da apresentação!</h5>
-                                <div class="col-sm-8 col-sm-offset-2">
-                                  <div class="choice choice active" data-toggle="wizard-checkbox">
-                                    <input type="checkbox" name="crachar" value="Crachar">
-                                    <div class="card card-checkboxes card-hover-effect">
-                                      <i class="ti-loop"></i>
-                                      <p>Aguardando o final da apresentação...</p>
-                                    </div>
-                                  </div>
-                                </div>';
-                      }
+                      liberarCertificado();
 
                       ?>
                     </div>
