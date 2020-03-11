@@ -2,6 +2,7 @@
 require_once '../functions.php';
 require_once '../adm_functions.php';
 require_once '../user_functions.php';
+
 acessoRestrito(0);
 
 $erro = "";
@@ -14,7 +15,7 @@ if (isset($_POST['buscar'])) {
             if(verifySubscribe($cpf)){
                 $res = verificaStatusPagamento($cpf);
                 if($res == true){
-                    $erro = "Pagamento já realizado!";
+                    $erro = "Pagamento já foi realizado anteriormente!";
                     $showInfoPagamento = 1;
                     }else{
                         $showData = 1;
@@ -81,7 +82,7 @@ if(isset($_POST['confirmar'])){
                                 echo "</div>";
                             }
                             if (!$mensagem == "") {
-                                echo "<div class='alert alert-warning alerta-sm' role='alert'>";
+                                echo "<div class='alert alert-success alerta-sm' role='alert'>";
                                 echo $mensagem;
                                 echo "</div>";
                             }
@@ -92,9 +93,9 @@ if(isset($_POST['confirmar'])){
                                     <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Período/Visitante</th>
-                                        <th scope="col">Status Pagamento</th>
+                                        <th scope="col">Inscrito</th>
+                                        <th>Período/Visitante</th>
+                                        <th>Status Pagamento</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -102,8 +103,8 @@ if(isset($_POST['confirmar'])){
                                         <?php
 
                                         echo "<th>".getNome($cpf)."</td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
+                                        echo "<td>".getPeriodo($cpf)."</td>";
+                                        echo "<td>".getStatusPagamento($cpf)."</td>";
 
                                         ?>
                                         </tr>
@@ -117,9 +118,9 @@ if(isset($_POST['confirmar'])){
                                     <thead>
                                         <tr>
                                         Descricao:
-                                        <th scope="col">Nome</th>
-                                        <th>Data/Hora</th>
-                                        <th>Usuário</th>
+                                        <th scope="col">Inscrito</th>
+                                        <th>Data do pagamento</th>
+                                        <th>Usuário Responsável</th>
                                         </tr>
                                     </thead>
                                     <tbody>
