@@ -102,7 +102,7 @@ if(isset($_POST['confirmar'])){
                                         <tr>
                                         <?php
 
-                                        echo "<th>".getNome($cpf)."</td>";
+                                        echo "<th>".getNomeInscrito($cpf)."</td>";
                                         echo "<td>".getPeriodo($cpf)."</td>";
                                         echo "<td>".getStatusPagamento($cpf)."</td>";
 
@@ -127,7 +127,7 @@ if(isset($_POST['confirmar'])){
                                         <tr>
                                         <?php
 
-                                        echo "<th>".getNome($cpf)."</td>";
+                                        echo "<th>".getNomeInscrito($cpf)."</td>";
                                         echo "<td>".getDataPagamento($cpf)."</td>";
                                         echo "<td>".getUsuarioPagamento($cpf)."</td>";
 
