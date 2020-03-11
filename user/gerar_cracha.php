@@ -8,7 +8,6 @@ use Dompdf\Dompdf;
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
-$dompdf->set_base_path('/congresso_direito_fvc/user/src/');
 
 $nome = 'Victor';
 $categoria = 'Estudante/1°Período';
@@ -20,15 +19,14 @@ $html = "<!DOCTYPE html>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>PDF</title>
         <style>
-        @page{}
+
             body{
 
                 background: none!important;
             }
             .cracha{
-                background: url('src/model.png');
-                background-size: cover;
-                font-family: Arial, Helvetica, sans-serif;
+                background: url('src/model.png') no-repeat;
+                font-family: 'Roboto', sans-serif;
                 font-size: 16pt;
                 width: 316px;
                 height: 443px;
@@ -47,18 +45,16 @@ $html = "<!DOCTYPE html>
                 margin-top: 300px;
             }
             
-            .codigobarras img{ 
+            .codigobarras{ 
                 float:left; 
             }	
 
             .codigobarras{
                 margin-top: 380px;
-                font-family: 'Roboto', sans-serif;
                 font-size: 20px;
-                display: flex;
+                margin-left: 100px;
                 align-items: center;
                 justify-content: center;
-                flex-direction: column;
             }
         </style>
     </head>
@@ -71,16 +67,9 @@ $html = "<!DOCTYPE html>
 </body>
 </html>";
 
-echo $html;
-//$dompdf->loadHtml($html);
-
-// (Optional) Setup the paper size and orientation
+//echo $html;
+$dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
-
-// Render the HTML as PDF
 $dompdf->render();
-
-// Output the generated PDF to Browser
-
 $dompdf->stream(''.getCPF().'');
 ?>
