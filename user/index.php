@@ -69,21 +69,13 @@ function getTurno()
   $conection = conection();
   $id_subscribe = $_SESSION['id_subscribe'];
   $query = mysqli_query($conection, "SELECT turno FROM inscritos WHERE id_inscritos='$id_subscribe'");
-  $row = mysqli_fetch_array($query);
-  $turno = $row['turno'];
 
-  switch ($turno) {
-    case 1:
-      $turno = '<td>Matutino</td>';
-      break;
-    case 2:
-      $turno = '<td>Noturno</td>';
-      break;
-    default:
-      $turno = '';
+  if(mysqli_num_rows($query) == 1){
+    $row = mysqli_fetch_array($query);
+    $turno = $row['turno'];
+    return $turno;
   }
 
-  return $turno;
 }
 
 function getStatus()
