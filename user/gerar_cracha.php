@@ -9,20 +9,18 @@ use Dompdf\Dompdf;
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
-$nome = 'Victor';
-$categoria = 'Estudante/1°Período';
-
-$dompdf->loadHtml("<!DOCTYPE html>
-    <html lang='pt-BR'>
+echo "<html>
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>". 'Crachá - '.getCPF()."</title>
         <style>
-
+            @media print{
+                .cracha{background: url('src/model.png') no-repeat;}
+            }
             body{
-
-                background: none!important;
+                width: 100%;
+                height: 100%;
             }
             .cracha{
                 background: url('src/model.png') no-repeat;
@@ -30,13 +28,13 @@ $dompdf->loadHtml("<!DOCTYPE html>
                 font-size: 16pt;
                 width: 316px;
                 height: 443px;
-                position: fixed;
+                
             }
             .label1, .label2{
                 width: 280px;
                 margin-left: 20px;
                 display: block;
-                position: fixed;
+                position: absolute;
             }
             .label1{
                 margin-top: 205px;
@@ -45,29 +43,41 @@ $dompdf->loadHtml("<!DOCTYPE html>
                 margin-top: 300px;
             }
             
-            .codigobarras{ 
+            #codebar img{ 
                 float:left; 
+                margin-top: 370px;
+
             }	
+            #codebar{
+                margin-left: 50px;
+                z-index: 10;
+            }
 
             .codigobarras{
-                margin-top: 380px;
-                font-size: 20px;
-                margin-left: 100px;
+                font-size: 10pt;
                 align-items: center;
                 justify-content: center;
+                position: relative;
+                display: block;
+            }
+            .codigobarras span{
+                margin-top: 380px;
+                margin-left: 100px;
             }
         </style>
     </head>
     <body>
         <div class='cracha'>
-            <p class='label1'>".getNome()."</p>
-            <p class='label2'>".getCategoria(getCPF())."</p>
-            <p class='codigobarras'>".getCPF()."</p>
+            <div class='dados'>
+                <p class='label1'>".getNome()."</p>
+                <p class='label2'>".getCategoria(getCPF())."</p>
+                <p class='codigobarras'>".fbarcode(getCPF())."<br><span>".getCPF()."</span></p>
+            </div>
         </div>
 </body>
-</html>");
+</html>";
 
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
-$dompdf->stream(''.getCPF().'');
+//$dompdf->stream(''.getCPF().'');
 ?>

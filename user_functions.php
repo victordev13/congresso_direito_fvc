@@ -74,6 +74,7 @@ require_once 'functions.php';
 
 		//Guarda inicial
 	?>
+	<div id="codebar">
 		<img src="../img/p.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
 		<img src="../img/b.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
 		<img src="../img/p.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
@@ -114,6 +115,7 @@ require_once 'functions.php';
 		<img src="../img/p.gif" width="<?php echo $largo; ?>" height="<?php echo $altura; ?>" border="0">
 		<img src="../img/b.gif" width="<?php echo $fino; ?>" height="<?php echo $altura; ?>" border="0">
 		<img src="../img/p.gif" width="<?php echo 1; ?>" height="<?php echo $altura; ?>" border="0">
+	</div>
 	<?php
 	} //Fim da fun��o
 
