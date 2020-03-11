@@ -46,7 +46,7 @@ require_once 'functions.php';
 
 		$fino = 2;
 		$largo = 5;
-		$altura = 40;
+		$altura = 50;
 
 		$barcodes[0] = "00110";
 		$barcodes[1] = "10001";

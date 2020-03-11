@@ -5,6 +5,16 @@ require('gerar_certificado/fpdf/alphapdf.php');
 require_once '../functions.php';
 include('./checkLogin.php');
 
+function formatCnpjCpf($value)
+{
+  $cnpj_cpf = preg_replace("/\D/", '', $value);
+  
+  if (strlen($cnpj_cpf) === 11) {
+    return preg_replace("/(\d{3})(\d{3})(\d{3})(\d{2})/", "\$1.\$2.\$3-\$4", $cnpj_cpf);
+  } 
+  
+  return preg_replace("/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/", "\$1.\$2.\$3/\$4-\$5", $cnpj_cpf);
+}
 
 @session_start();
 
@@ -19,14 +29,15 @@ $cpf = $row['cpf'];
 $status = $row['status'];
 
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
-$curso    = "Congresso de Direito da FVC";
+$curso    = "III SEMINÁRIO JURÍDICO DO CAD-FVC";
 
 //inserir funcao para pegar data e calcular horas presentes
-$data     = "08/03/2020";
+$data     = "25/03/2020";
 $carga_h  = "10 horas";
 
 
-$texto2 = utf8_decode("pela participação no ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
+$texto1 = utf8_decode("Portador do CPF: ".formatCnpjCpf($cpf)."\nParticipou do ".$curso.", com carga horária total de ".$carga_h.".");
+$texto2 = utf8_decode("São Mateus, ".utf8_encode(strftime( '%d de %B de %Y', strtotime( date( 'Y-m-d' ) ) )));
 
 
 $pdf = new AlphaPDF();
@@ -44,13 +55,18 @@ $pdf->SetAlpha(1);
 
 
 // Mostrar o nome
-$pdf->SetFont('Arial', '', 30); // Tipo de fonte e tamanho
+$pdf->SetFont('Arial', 'B', 20); // Tipo de fonte e tamanho
 $pdf->SetXY(20,105); //Parte chata onde tem que ficar ajustando a posição X e Y
-$pdf->MultiCell(265, 10, $nome, '', 'C', 0); // Tamanho width e height e posição
+$pdf->MultiCell(265, 10, strtoupper($nome), '', 'C', 0); // Tamanho width e height e posição
 
 // Mostrar o corpo
 $pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
-$pdf->SetXY(20,110); //Parte chata onde tem que ficar ajustando a posição X e Y
+$pdf->SetXY(20,120); //Parte chata onde tem que ficar ajustando a posição X e Y
+$pdf->MultiCell(265, 10, $texto1, '', 'C', 0); // Tamanho width e height e posição
+
+// Mostrar a data no final
+$pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
+$pdf->SetXY(20,150); //Parte chata onde tem que ficar ajustando a posição X e Y
 $pdf->MultiCell(265, 10, $texto2, '', 'C', 0); // Tamanho width e height e posição
 
 
