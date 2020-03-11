@@ -117,61 +117,48 @@ function getNivelAcesso($usuario){
         $connect = conection();
 
         $id_usuario = getIdAdmin();
-        $id_inscrito = "SELECT id_incritos FROM inscritos WHERE cpf='$cpf'";
+        $id_inscrito = getIdUsuario($_SESSION['usuario']);
 
-        $sql = "INSERT INTO `pagamento` (`id_pagamento`, `id_usuario`, `id_inscritos`, `horario`) VALUES (NULL, '$id_usuario', '$id_inscrito', CURRENT_TIMESTAMP)";
+        $sql = "INSERT INTO `pagamento` (`id_usuario`, `id_inscritos`, `horario`) VALUES ('$id_usuario', '$id_inscrito', CURRENT_TIMESTAMP())";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
-            if(mysqli_num_rows($resultado)){
-                return true;
-            }else{
+            return true;
+        }else{
                 return false;
-            }
-        }
-        
+        }     
     
         FecharConexao($connect);
     }
 
-    function getDataPagamento($cpf){
+    function getNomeInscrito($cpf){
         $connect = conection();
-
-        $sql = "SELECT status_pagamento FROM `inscritos` WHERE cpf = '$cpf'";
-        $resultado = mysqli_query($connect, $sql);
         
-        if($resultado){
-            $row = mysqli_fetch_array($resultado);
-            $status_pagamento = $row['0'];
+		$query = mysqli_query($connect, "SELECT nome FROM inscritos WHERE cpf='$cpf'");
+        
+        if($query){
+            $row = mysqli_fetch_array($query);
+            $nomeUsuario = $row['0'];
 
-            if($status_pagamento == '1'){
-                return true;
-            }else{
-                return false;
-            }
+            return $nomeUsuario;
         }else{
             return false;
         }
-       
-
         FecharConexao($connect);
-    }
-
+	}
+    
     function getUsuarioPagamento($cpf){
         $connect = conection();
+        $id_inscrito = getIdInscrito($cpf);
 
-        $sql = "SELECT status_pagamento FROM `inscritos` WHERE cpf = '$cpf'";
+        $sql = "SELECT usuario FROM `pagamento` INNER JOIN usuario ON usuario.id = id_usuario WHERE pagamento.id_inscritos = '$id_inscrito'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
             $row = mysqli_fetch_array($resultado);
-            $status_pagamento = $row['0'];
+            $usuario = $row['0'];
 
-            if($status_pagamento == '1'){
-                return true;
-            }else{
-                return false;
-            }
+            return $usuario;
         }else{
             return false;
         }
@@ -179,6 +166,94 @@ function getNivelAcesso($usuario){
 
         FecharConexao($connect);
     }
+
+
+    function getDataPagamento($cpf){
+        $connect = conection();
+        $id_inscrito = getIdInscrito($cpf);
+
+        $sql = "SELECT horario FROM `pagamento` WHERE pagamento.id_inscritos = '$id_inscrito'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado){
+            $row = mysqli_fetch_array($resultado);
+            $data = $row['0'];
+            $timestamp = strtotime($data); 
+
+            $data = date('d/m/Y',$timestamp);
+            return $data;
+        }else{
+            return false;
+        }
+       
+
+        FecharConexao($connect);
+    }
+
+    function getIdUsuario($usuario){
+        $connect = conection();
+
+        $sql = "SELECT id FROM usuario WHERE usuario='$usuario'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado){
+            $row = mysqli_fetch_array($resultado);
+            $id_usuario = $row['0'];
+
+            if(mysqli_num_rows($resultado)){
+                return $id_usuario;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+
+        FecharConexao($connect);
+    }
+
+    function getPeriodo($cpf){
+        $connect = conection();
+
+        $sql = "SELECT periodo FROM inscritos WHERE cpf='$cpf'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado){
+            $row = mysqli_fetch_array($resultado);
+            $periodo = $row['0'];
+
+            if($periodo == 0){
+                return "Visitante";
+            }else{
+                return $periodo."°";
+            }
+        }else{
+            return false;
+        }
+
+        FecharConexao($connect);
+    }
+        
+    function getStatusPagamento($cpf){
+        $conection = conection();
+
+        $query = mysqli_query($conection, "SELECT status_pagamento FROM inscritos WHERE cpf='$cpf'");
+        $row = mysqli_fetch_array($query);
+        $status = $row['status_pagamento'];
+
+        if($status == 0){
+            return "<span class='text-danger'>Pendente</span>";
+        }else if($status == 1){
+            return "Efetuado";
+        }else{
+            return "ERRO AO BUSCAR STATUS";
+        }
+    }
+
+    function getDadosPagamento(){
+        
+    }
+
     
 //  FIM FUNÇÕES DO USUÁRIO FINANCEIRO //
 

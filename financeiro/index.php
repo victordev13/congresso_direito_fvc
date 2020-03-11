@@ -2,6 +2,7 @@
 require_once '../functions.php';
 require_once '../adm_functions.php';
 require_once '../user_functions.php';
+
 acessoRestrito(0);
 
 $erro = "";
@@ -14,27 +15,30 @@ if (isset($_POST['buscar'])) {
             if(verifySubscribe($cpf)){
                 $res = verificaStatusPagamento($cpf);
                 if($res == true){
-                    $mensagem = "Pagamento já foi realizado";
+                    $erro = "Pagamento já foi realizado anteriormente!";
                     $showInfoPagamento = 1;
+                    }else{
+                        $showData = 1;
+                        $showButtonConfirmar = 1;
+                    }
                 }else{
-                    $showData = 1;
-                    $showButtonConfirmar = 1;
+                    $erro = "CPF não encontrado, solicite a inscrição no site!";
                 }
-               
             }else{
-                $erro = "CPF não encontrado, solicite a inscrição no site!";
+                $erro = "CPF Inválido, digite corretamente";
             }
-            
-        }else{
-            $erro = "CPF Inválido, digite corretamente";
-        }
+    }
+}
+if(isset($_POST['confirmar'])){
+    $cpf = $_POST['cpf'];
+    
+    if(validaPagamento($cpf)){
+        $mensagem = "Pagamento Efetuado com Sucesso!";
+    }else{
+        $mensagem = "erro";
     }
 }
 
-if(isset($_POST['confirmar'])){
-    validaPagamento($cpf);
-    $mensagem = "Pagamento Efetuado com Sucesso!"
-}
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +82,7 @@ if(isset($_POST['confirmar'])){
                                 echo "</div>";
                             }
                             if (!$mensagem == "") {
-                                echo "<div class='alert alert-warning alerta-sm' role='alert'>";
+                                echo "<div class='alert alert-success alerta-sm' role='alert'>";
                                 echo $mensagem;
                                 echo "</div>";
                             }
@@ -89,18 +93,18 @@ if(isset($_POST['confirmar'])){
                                     <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Período/Visitante</th>
-                                        <th scope="col">Status Pagamento</th>
+                                        <th scope="col">Inscrito</th>
+                                        <th>Período/Visitante</th>
+                                        <th>Status Pagamento</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                         <?php
 
-                                        echo "<th>".getNome($cpf)."</td>";
-                                        echo "<td>".$periodoParticipante."</td>";
-                                        echo "<td>".$statusPagamentoParticipante."</td>";
+                                        echo "<th>".getNomeInscrito($cpf)."</td>";
+                                        echo "<td>".getPeriodo($cpf)."</td>";
+                                        echo "<td>".getStatusPagamento($cpf)."</td>";
 
                                         ?>
                                         </tr>
@@ -113,17 +117,19 @@ if(isset($_POST['confirmar'])){
                                     <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                        <th scope="col">Nome</th>
-                                        <th>Data/Hora</th>
-                                        <th>Usuário</th>
+                                        Descricao:
+                                        <th scope="col">Inscrito</th>
+                                        <th>Data do pagamento</th>
+                                        <th>Usuário Responsável</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                         <?php
 
-                                        echo "<th>".getNome($cpf)."</td>";
-                                        echo "<td>".getDataPagamento()."</td>";
+                                        echo "<th>".getNomeInscrito($cpf)."</td>";
+                                        echo "<td>".getDataPagamento($cpf)."</td>";
+                                        echo "<td>".getUsuarioPagamento($cpf)."</td>";
 
                                         ?>
                                         </tr>
@@ -133,7 +139,7 @@ if(isset($_POST['confirmar'])){
                                 <?php } ?>
 
                                 <?php if(isset($showButtonConfirmar)) { ?>
-                                    <form method="POST"><button type="submit" class="btn btn-fvc mb-4" name="confirmar">Confirmar Pagamento</button></form>
+                                    <form method="POST"><input type="hidden" name="cpf" id="confirma_cpf" value="<?php echo $cpf; ?>"><button type="submit" class="btn btn-fvc mb-4" name="confirmar">Confirmar Pagamento</button></form>
                                <?php }?>
                             </div>
                         </div>

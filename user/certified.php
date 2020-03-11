@@ -8,9 +8,9 @@ function getStatus()
 {
   $conection = conection();
   $id_subscribe = $_SESSION['id_subscribe'];
-  $query = mysqli_query($conection, "SELECT status FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $query = mysqli_query($conection, "SELECT status_pagamento FROM inscritos WHERE id_inscritos='$id_subscribe'");
   $row = mysqli_fetch_array($query);
-  $status = $row['status'];
+  $status = $row['status_pagamento'];
 
   return $status;
 }
