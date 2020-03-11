@@ -91,3 +91,11 @@ nav img{
 .lista{
 	font-family: 'Roboto', sans-serif;
 }
+
+p.creditos{
+	text-align: center;
+	margin-top: 50px;
+	color: #333333;
+	font-weight: bold;
+	font-size: 10pt;
+}

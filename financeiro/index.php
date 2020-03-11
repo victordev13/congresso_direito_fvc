@@ -61,8 +61,6 @@ if(isset($_POST['confirmar'])){
                 <a class="navbar-brand" href="index.php">
                     <img src="/congresso_direito_fvc/img/fvclogo.png" class="d-inline-block align-top" height="50" alt="">
                 </a>
-                    <p class="">Olá, <?php echo $_SESSION['usuario'] ?></p>
-
                 <a href="../logout.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Sair</a>
             </div>
         </nav>
@@ -70,6 +68,7 @@ if(isset($_POST['confirmar'])){
                 <div class="card" style="min-width: 600px">
                     <div class="card-body">
                         <div class="card-body">
+                        <p class="my-2 my-sm-0" >Bem vindo, <b> <?php echo $_SESSION['usuario'] ?></b></p><hr>
                             <form method="POST" id="formCPF" name="formCPF" class="form-inline justify-content-center align-items-center">
                                 <label for="cpf" class="mr-sm-2">CPF:</label>
                                 <input type="text" class="form-control mr-sm-3" id="cpf"  name="cpf" placeholder="123.456.789-10">
@@ -145,7 +144,7 @@ if(isset($_POST['confirmar'])){
                         </div>
                     </div>
                 </div>
-
+                
 <?php
 require_once '../includes/footer_adm.php'
 ?>

@@ -140,10 +140,18 @@ if (isset($_POST['login'])) {
                     </div>
                   </div>
                   <div class="wizard-footer">
-                    <div class="pull-center">
+                    <div class="pull-left">
                       <button type='submit' name="login" class="btn btn-success btn-fill btn-wd">Entrar</button>
                     </div>
+                    <div class="pull-right">
+                                    <a href="../index.php">
+                                        <button type='button' id="voltar" class="btn btn-default btn-fill">
+                                            Voltar
+                                        </button>
+                                    </a>
+                                </div>
                     <div class="clearfix"></div>
+                    <p class="creditos">&copy Desenvolvido pela turma do 5° período em Análise e Desenvolvimento de Sistemas - FVC 2020</p>
                   </div>
                 </div>
               </div> <!-- wizard container -->

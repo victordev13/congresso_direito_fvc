@@ -19,8 +19,26 @@ require_once 'functions.php';
 		return $nome;
 	}
 		
-	function getCategoria(){
+	function getCategoria($cpf){
+		$connect = conection();
+
+		$sql = "SELECT periodo FROM inscritos WHERE cpf = '$cpf'";
+		$resultado = mysqli_query($connect, $sql);
 		
+		if(mysqli_num_rows($resultado) >= 1){
+			$dados = mysqli_fetch_array($resultado);
+			$periodo = $dados['0'];
+
+			if($periodo == 0){
+				return "Visitante";
+			}else{
+				return "Estudante/".$periodo."° Período";
+			}
+		}else{
+			return false;
+		}
+
+		FecharConexao($connect);
 	}
 		
 	function fbarcode($valor)

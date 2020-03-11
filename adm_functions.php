@@ -74,14 +74,14 @@ function getNivelAcesso($usuario){
     function verificaStatusPagamento($cpf){
         $connect = conection();
 
-        $sql = "SELECT status_pagamento FROM `inscritos` WHERE cpf = '$cpf'";
+        $sql = "SELECT status FROM `inscritos` WHERE cpf = '$cpf'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
             $row = mysqli_fetch_array($resultado);
-            $status_pagamento = $row['0'];
+            $status = $row['0'];
 
-            if($status_pagamento == '1'){
+            if($status == '1'){
                 return true;
             }else{
                 return false;
@@ -100,7 +100,7 @@ function getNivelAcesso($usuario){
         //INSERIR REGISTRO NA TABELA PAGAMENTO  E ALTERAR COLUNA DE STATUS DO INSCRITO
         registraPagamento($cpf);
 
-        $sql = "UPDATE inscritos SET status_pagamento='1' WHERE cpf='$cpf'";
+        $sql = "UPDATE inscritos SET status='1' WHERE cpf='$cpf'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado == 1){
@@ -237,9 +237,9 @@ function getNivelAcesso($usuario){
     function getStatusPagamento($cpf){
         $conection = conection();
 
-        $query = mysqli_query($conection, "SELECT status_pagamento FROM inscritos WHERE cpf='$cpf'");
+        $query = mysqli_query($conection, "SELECT status FROM inscritos WHERE cpf='$cpf'");
         $row = mysqli_fetch_array($query);
-        $status = $row['status_pagamento'];
+        $status = $row['status'];
 
         if($status == 0){
             return "<span class='text-danger'>Pendente</span>";

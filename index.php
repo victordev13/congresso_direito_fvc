@@ -51,7 +51,7 @@ if (isset($_POST['inscrever'])) {
                         <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
                         <div class="wizard-header text-center">
                             <h3 class="wizard-title">Inscrição</h3>
-                            <p class="category">Inscreva-se para o Congresso de Direito da FVC</p>
+                            <p class="category">III SEMINÁRIO JURÍDICO DO CAD-FVC</p>
                         </div>
 
                         <div class="wizard-navigation">
@@ -139,8 +139,8 @@ if (isset($_POST['inscrever'])) {
                                             <label>Turno</label><br>
                                             <select class="form-control" id="turno" required name="turno">
                                                 <option selected disabled>Selecione...</option>
-                                                <option value="1">Matutino</option>
-                                                <option value="2">Noturno</option>
+                                                <option value="Matutino">Matutino</option>
+                                                <option value="Noturno">Noturno</option>
                                             </select>
                                         </div>
                                     </div>
@@ -160,6 +160,7 @@ if (isset($_POST['inscrever'])) {
                                     </a>
                                 </div>
                                 <div class="clearfix"></div>
+                                <p class="creditos">&copy Desenvolvido pela turma do 5° período em Análise e Desenvolvimento de Sistemas - FVC 2020</p>
                             </div>
                     </form>
                 </div>

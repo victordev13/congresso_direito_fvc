@@ -163,6 +163,7 @@ function getIDSubscribe($email, $cpf)
 	$row = mysqli_fetch_array($query);
 	$id_subscribe = $row['id_inscritos'];
 	return $id_subscribe;
+	echo $id_subscribe;
 }
 
 function getIdInscrito($cpf)

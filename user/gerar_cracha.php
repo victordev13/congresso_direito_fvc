@@ -12,12 +12,12 @@ $dompdf = new Dompdf();
 $nome = 'Victor';
 $categoria = 'Estudante/1°Período';
 
-$html = "<!DOCTYPE html>
+$dompdf->loadHtml("<!DOCTYPE html>
     <html lang='pt-BR'>
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>PDF</title>
+        <title>". 'Crachá - '.getCPF()."</title>
         <style>
 
             body{
@@ -61,14 +61,12 @@ $html = "<!DOCTYPE html>
     <body>
         <div class='cracha'>
             <p class='label1'>".getNome()."</p>
-            <p class='label2'>".$categoria."</p>
+            <p class='label2'>".getCategoria(getCPF())."</p>
             <p class='codigobarras'>".getCPF()."</p>
         </div>
 </body>
-</html>";
+</html>");
 
-//echo $html;
-$dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
 $dompdf->stream(''.getCPF().'');

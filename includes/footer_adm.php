@@ -1,7 +1,7 @@
 <footer class="footer">
-
 </footer>
 </main>
+<p class="creditos">&copy Desenvolvido pela turma do 5° período em Análise e Desenvolvimento de Sistemas - FVC 2020</p>
 </body>
 
 <script src="/congresso_direito_fvc/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>

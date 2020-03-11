@@ -90,9 +90,9 @@ function getStatus()
 {
   $conection = conection();
   $id_subscribe = $_SESSION['id_subscribe'];
-  $query = mysqli_query($conection, "SELECT status_pagamento FROM inscritos WHERE id_inscritos='$id_subscribe'");
+  $query = mysqli_query($conection, "SELECT status FROM inscritos WHERE id_inscritos='$id_subscribe'");
   $row = mysqli_fetch_array($query);
-  $status = $row['status_pagamento'];
+  $status = $row['status'];
 
   switch ($status) {
     case 1:
@@ -266,6 +266,7 @@ function getStatus()
                   </div>
 
                   <div class="clearfix"></div>
+                  <p class="creditos">&copy Desenvolvido pela turma do 5° período em Análise e Desenvolvimento de Sistemas - FVC 2020</p>
               </div>
             </div>
           </div> <!-- wizard container -->
