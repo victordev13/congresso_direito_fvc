@@ -86,7 +86,7 @@ if (isset($_POST['login'])) {
                   <ul>
                     <li>
                       <a href="../index.php" data-toggle="tab" aria-expanded="false">
-                        <div class="icon-circle checked">
+                        <div id="menuInscrição" class="icon-circle checked">
                           <i class="ti-user"></i>
                         </div>
                         INSCRIÇÃO
