@@ -122,6 +122,7 @@ if (isset($_POST['inscrever'])) {
                                             <label>Período ou Visitante</label><br>
                                             <select class="form-control" id="periodo" required name="periodo">
                                                 <option selected disabled value="">Selecione...</option>
+                                                <option value="0">Visitante </option>
                                                 <option value="1">Primeiro </option>
                                                 <option value="2">Segundo </option>
                                                 <option value="3">Terceiro </option>
@@ -132,7 +133,6 @@ if (isset($_POST['inscrever'])) {
                                                 <option value="8">Oitavo </option>
                                                 <option value="9">Nono </option>
                                                 <option value="10">Décimo </option>
-                                                <option value="0">Visitante </option>
                                             </select>
                                         </div>
                                         <div class="form-group" style="display:none" id="div_turno">
