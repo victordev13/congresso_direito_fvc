@@ -182,5 +182,10 @@ function liberarCertificado()
 
 <!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
 <script src="../assets/js/jquery.validate.min.js" type="text/javascript"></script>
+<script>
+  let menuStats = document.getElementById('menuStatus');
 
+menuStatus.onclick = function(){
+  window.location = 'index.php';
+}</script>
 </html>
