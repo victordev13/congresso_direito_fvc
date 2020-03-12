@@ -124,7 +124,7 @@ function liberarCertificado()
                     </li>
                     <li>
                       <a href="index.php" data-toggle="tab" aria-expanded="false">
-                        <div class="icon-circle checked">
+                        <div id="menuStatus" class="icon-circle checked">
                           <i class="ti-settings"></i>
                         </div>
                         STATUS
