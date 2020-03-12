@@ -27,7 +27,7 @@ if (isset($_POST['inscrever'])) {
                 $_SESSION['subscribe'] = true;
                 $_SESSION['id_subscribe'] = $id_subscribe;
 
-                header("location: user/index.php");
+                 echo "<script>window.location = 'user/index.php'</script>";
             } else {
                 $erro = "Erro ao realizar Inscrição!";
             }
@@ -175,6 +175,7 @@ if (isset($_POST['inscrever'])) {
 <?php
 
 require_once 'includes/footer.php';
+
 ?>
 
 </div>

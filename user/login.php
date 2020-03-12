@@ -85,7 +85,7 @@ if (isset($_POST['login'])) {
                   </div>
                   <ul>
                     <li>
-                      <a href="../index.php" data-toggle="tab" aria-expanded="false">
+                      <a href="../index.php">
                         <div class="icon-circle checked">
                           <i class="ti-user"></i>
                         </div>

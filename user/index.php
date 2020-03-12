@@ -103,6 +103,7 @@ function getStatus()
   return $status;
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -155,6 +156,7 @@ function getStatus()
                   <div class="wizard-header text-center">
                     <h3 class="wizard-title">Status</h3>
                     <p class="category">Acompanhe o status da sua inscrição</p>
+                    <a href="logout.php" class="btn btn-fvc btn-danger" style="margin-top: -40px; margin-right: 20px" >Sair</a>
                   </div>
 
                   <div class="wizard-navigation">

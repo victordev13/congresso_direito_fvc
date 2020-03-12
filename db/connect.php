@@ -1,7 +1,7 @@
 <?php
-$host="localhost:3307"; 
-$username="root"; 
-$password=""; 
-$db_name="congresso";
+$host="localhost"; 
+$username="ivcbr_eventos"; 
+$password="r9cAYc5U%03O^gYELsnm"; 
+$db_name="ivcbr_eventos";
 
 ?>
