@@ -180,5 +180,10 @@ if (isset($_POST['login'])) {
 
 <!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
 <script src="../assets/js/jquery.validate.min.js" type="text/javascript"></script>
+<script>
+  let menuInscrição = document.getElementById('menuInscrição');
 
+  menuInscrição.onclick = function(){
+  window.location = '../index.php';
+}</script>
 </html>

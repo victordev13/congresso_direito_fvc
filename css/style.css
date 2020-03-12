@@ -47,18 +47,6 @@ nav img{
 
 }
 
-@media (max-width: 568px) {
-  img{
-		height: 50px;
-	}
-	.bg-fvc{
-		font-size: 15px;
-	}
-	#inscricao {
-    padding: 0 0.5rem;
-	}
-}
-
 .direito{
 	width: 350px;
 }
@@ -100,3 +88,20 @@ p.creditos{
 	font-weight: bold;
 	font-size: 10pt;
 }
+
+@media screen and (max-width: 568px) {
+	img{
+		height: 34px!important;
+		margin-top: 7px;
+	}
+
+	.footer {
+		display: grid;
+		text-align: center!important;
+		
+	}
+	.footer button{
+		margin-bottom: 10px;
+	}
+
+  }

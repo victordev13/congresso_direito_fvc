@@ -33,7 +33,7 @@ $curso    = "III SEMINÁRIO JURÍDICO DO CAD-FVC";
 
 //inserir funcao para pegar data e calcular horas presentes
 $data     = "25/03/2020";
-$carga_h  = "10 horas";
+$carga_h  = "8 horas";
 
 
 $texto1 = utf8_decode("Portador do CPF: ".formatCnpjCpf($cpf)."\nParticipou do ".$curso.", com carga horária total de ".$carga_h.".");

@@ -110,7 +110,7 @@ function getStatus()
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Status - Congresso de Direito da FVC</title>
+  <title>Status - III SEMINÁRIO JURÍDICO DO CAD-FVC</title>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
@@ -136,7 +136,6 @@ function getStatus()
         <a class="navbar-brand" href="index.php">
           <img src="../img/fvclogo.png" class="d-inline-block align-top" height="50" alt="">
         </a>
-        <a href="../login.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Acesso restrito</a>
       </div>
     </nav>
 
@@ -164,7 +163,7 @@ function getStatus()
                     <ul>
                       <li>
                         <a href="../index.php" data-toggle="tab" aria-expanded="false">
-                          <div class="icon-circle checked">
+                          <div id="menuInscricao" class="icon-circle checked">
                             <i class="ti-user"></i>
                           </div>
                           INSCRIÇÃO
@@ -288,5 +287,10 @@ function getStatus()
 <!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
 <script src="../assets/js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="../js/user.js" type="text/javascript"></script>
+<script>
+  let menuInscricao = document.getElementById('menuInscricao');
 
+  menuInscricao.onclick = function(){
+  window.location = '../index.php';
+}</script>
 </html>

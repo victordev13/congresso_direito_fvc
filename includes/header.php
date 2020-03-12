@@ -18,7 +18,8 @@
 	<!-- Fonts and Icons -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
-	<link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body class="bg-dark">
 <main>
@@ -27,7 +28,7 @@
             <a class="navbar-brand" href="index.php">
                 <img src="img/fvclogo.png"  class="d-inline-block align-top" alt="Logo FVC">
             </a>
-            <a href="login.php" class="btn btn-fvc my-2 my-sm-0" type="submit">Acesso restrito</a>
+            <a href="login.php" class="btn btn-info btn-fill btn-fvc" type="submit">Acesso restrito</a>
         </div>
     </nav>
     

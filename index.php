@@ -146,7 +146,7 @@ if (isset($_POST['inscrever'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="wizard-footer">
+                            <div class="wizard-footer footer">
                                 <div class="pull-left">
                                     <button type='submit' name="inscrever" class="btn btn-success btn-fill btn-wd">
                                         Inscrever-se
