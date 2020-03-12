@@ -119,7 +119,7 @@ if (isset($_POST['inscrever'])) {
                                             <input name="tel" id="tel" type="text" class="form-control" placeholder="(27) 99999-9999" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>Perído ou Visitante</label><br>
+                                            <label>Período ou Visitante</label><br>
                                             <select class="form-control" id="periodo" required name="periodo">
                                                 <option selected disabled value="">Selecione...</option>
                                                 <option value="1">Primeiro </option>

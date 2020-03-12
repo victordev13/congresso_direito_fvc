@@ -1,5 +1,12 @@
 
-<?php include "function/gerarcodigobarra.php"?>
+<?php include "function/gerarcodigobarra.php";
+    require_once '../../user_functions.php';
+    session_start();
+    if(!isset($_SESSION['subscribe']) == true){
+        unset($_SESSION['subscribe']);
+        header("location: ../login.php");
+    }
+?>
 <!DOCTYPE html>
 	<html lang='pt-br'>
 		<head>
@@ -14,7 +21,7 @@
 
         <div id="container">
         
-        <div class"logo">
+        <div class="logo">
             <center>
                  <img src="imagens/logo.png" width="80px">
             </center>
@@ -30,8 +37,8 @@
             
         
         
-        <p> <b> Aluno: </b> <?php echo "variavel com o nome" ?> </p> <!-- Colocar as variavel com o nome -->
-        <p> <b> CPF: </b> <?php echo "variavel com o CPF" ?> </p> <!-- Colocar a variavel com o CPF -->
+        <p> <b> Aluno: </b> <?php echo getNome(); ?> </p> <!-- Colocar as variavel com o nome -->
+        <p> <b> CPF: </b> <?php echo getCPF(); ?> </p> <!-- Colocar a variavel com o CPF -->
         <br>
         <p class="fontmenor" > A entrada no evento e contabilização de horas só sera possível com a apresentação desse cracha que poderar ser feita, tanto online no proprio celular com internet, quanto impressa.
 
@@ -41,13 +48,14 @@
 
 
         <div class="codigo">
-            <br><br> 
+            <br>
            
             <center>
-                <?php geraCodigoBarra("17805418721") ?> <br> <!-- Aqui tem que colocar a variavel que gera o codigo de barra -->
-                <?php echo "00000000000" ?> <!-- Aqui repete a variavel que traz o cpf do candidato -->
+                <?php geraCodigoBarra(getCPF()) ?> <br> <!-- Aqui tem que colocar a variavel que gera o codigo de barra -->
+                <?php echo getCPF() ?> <!-- Aqui repete a variavel que traz o cpf do candidato -->
             </center>
             <center>
+                <br>
             <button id="btn" > Versao para Impressao </button>
             <button id="voltar" onClick="VoltarPagina()"> Voltar </button>
             </center>
@@ -57,18 +65,20 @@
         <script>
         document.getElementById('btn').onclick = function() {
             var conteudo = document.getElementById('container').innerHTML,
-                tela_impressao = window.open('about:blank');
+            tela_impressao = window.open('about:blank');
 
             tela_impressao.document.write(conteudo);
-            tela_impressao.window.print();
-            tela_impressao.window.close();
+            tela_impressao.document.close();
+
+            tela_impressao.print();
+
         };
         </script>
 
         <script type="text/javascript">
             function VoltarPagina()
                     {
-                location.href=" index.html";
+                location.href="../index.php";
                     }
         </script>   
 

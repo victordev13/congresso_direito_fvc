@@ -1,7 +1,7 @@
 let cracha = document.getElementById('cracha');
 
 cracha.onclick = function(){
-  window.location = 'cracha.php';
+  window.location = 'cracha/gerarCracha.php';
 }
 
 let certificado = document.getElementById('certificado');
