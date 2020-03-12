@@ -1,0 +1,6 @@
+[12-Mar-2020 15:33:00 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/functions.php on line 43
+[12-Mar-2020 15:33:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/includes/header.php:1) in /home/ivcbr/public_html/eventos/functions.php on line 46
+[12-Mar-2020 15:35:57 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/functions.php on line 43
+[12-Mar-2020 15:35:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/includes/header.php:1) in /home/ivcbr/public_html/eventos/functions.php on line 46
+[12-Mar-2020 21:41:19 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/functions.php on line 43
+[12-Mar-2020 21:41:19 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/includes/header.php:1) in /home/ivcbr/public_html/eventos/functions.php on line 46

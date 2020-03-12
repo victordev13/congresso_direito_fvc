@@ -2,6 +2,6 @@
 session_start();
 if(!isset($_SESSION['subscribe']) == true){
   unset($_SESSION['subscribe']);
-  header("location: /user/login.php");
+  echo "<script>window.location = '/user/login.php'</script>";
 }
 ?>

@@ -118,14 +118,15 @@ function getNivelAcesso($usuario){
 
         $id_inscrito = getIdInscrito($cpf);
         $id_usuario = getIdUsuario($_SESSION['usuario']);
-
+        
         $sql = "INSERT INTO `log_pagamento` (`usuario`, `inscritos`, `horario`) VALUES ('$id_usuario', '$id_inscrito', CURRENT_TIMESTAMP())";
         $resultado = mysqli_query($connect, $sql);
 
         if($resultado){
+            
             return true;
         }else{
-                return false;
+            return false;
         }     
     
         FecharConexao($connect);
@@ -153,11 +154,11 @@ function getNivelAcesso($usuario){
 
         $sql = "SELECT u.usuario FROM `log_pagamento` AS l INNER JOIN usuario AS u ON idusuario = l.usuario WHERE l.inscritos = '$id_inscrito'";
         $resultado = mysqli_query($connect, $sql);
-        
+       
         if($resultado){
             $row = mysqli_fetch_array($resultado);
             $usuario = $row['0'];
-
+            
             return $usuario;
         }else{
             return false;
@@ -172,16 +173,13 @@ function getNivelAcesso($usuario){
         $connect = conection();
         $id_inscrito = getIdInscrito($cpf);
 
-        $sql = "SELECT horario FROM `log_pagamento` WHERE log_pagamento.inscritos = '$id_inscrito'";
+        $sql = "SELECT * FROM log_pagamento WHERE log_pagamento.inscritos ='$id_inscrito'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
             $row = mysqli_fetch_array($resultado);
-            $data = $row['0'];
-            $timestamp = strtotime($data); 
-
-            $data = date('d/m/Y',$timestamp);
-            return $data;
+            $dados = $row['1'];
+        
         }else{
             return false;
         }

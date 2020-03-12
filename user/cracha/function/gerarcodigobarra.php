@@ -27,10 +27,10 @@ function geraCodigoBarra($numero){
 			}
 		}
 		
-		echo '<img src="../cracha/imagens/p.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
-		echo '<img src="../cracha/imagens/b.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
-		echo '<img src="../cracha/imagens/p.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
-		echo '<img src="../cracha/imagens/b.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
+		echo '<img src="imagens/p.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
+		echo '<img src="imagens/b.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
+		echo '<img src="imagens/p.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
+		echo '<img src="imagens/b.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
 		
 		echo '<img ';
 		
@@ -55,7 +55,7 @@ function geraCodigoBarra($numero){
   					$f1 = $largo ;
   				}
   				
-  				echo 'src="../cracha/imagens/p.gif" width="'.$f1.'" height="'.$altura.'" border="0">';
+  				echo 'src="imagens/p.gif" width="'.$f1.'" height="'.$altura.'" border="0">';
   				echo '<img ';
   				
   				if(substr($f, $i, 1) == '0'){
@@ -64,13 +64,13 @@ function geraCodigoBarra($numero){
 					$f2 = $largo ;
 				}
 				
-				echo 'src="../cracha/imagens/b.gif" width="'.$f2.'" height="'.$altura.'" border="0">';
+				echo 'src="../imagens/b.gif" width="'.$f2.'" height="'.$altura.'" border="0">';
 				echo '<img ';
 			}
 		}
-		echo 'src="../cracha/imagens/p.gif" width="'.$largo.'" height="'.$altura.'" border="0" />';
-		echo '<img src="../cracha/imagens/b.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
-		echo '<img src="../cracha/imagens/p.gif" width="1" height="'.$altura.'" border="0" />';
+		echo 'src="imagens/p.gif" width="'.$largo.'" height="'.$altura.'" border="0" />';
+		echo '<img src="imagens/b.gif" width="'.$fino.'" height="'.$altura.'" border="0" />';
+		echo '<img src="imagens/p.gif" width="1" height="'.$altura.'" border="0" />';
     }
     
 

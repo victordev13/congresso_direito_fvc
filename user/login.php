@@ -85,8 +85,13 @@ if (isset($_POST['login'])) {
                   </div>
                   <ul>
                     <li>
+<<<<<<< HEAD
+                      <a href="../index.php">
+                        <div class="icon-circle checked">
+=======
                       <a href="../index.php" data-toggle="tab" aria-expanded="false">
                         <div id="menuInscrição" class="icon-circle checked">
+>>>>>>> 40aceedd8700c053cae539fe7e91dc7e79778e0a
                           <i class="ti-user"></i>
                         </div>
                         INSCRIÇÃO

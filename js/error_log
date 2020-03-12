@@ -1,0 +1,210 @@
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 7
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:52:20 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 7
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:53:05 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 7
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:53:08 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 7
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:54:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:54:31 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 7
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:54:32 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 7
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:55:51 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 7
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:56:34 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:57:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:57:19 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 16
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 17
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'ivcbr_eventos'@'191.252.144.165' (using password: YES) in /home/ivcbr/public_html/eventos/functions.php on line 5
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/functions.php on line 6
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/ivcbr/public_html/eventos/user_functions.php on line 7
+[12-Mar-2020 00:58:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/ivcbr/public_html/eventos/user_functions.php on line 8
+[12-Mar-2020 02:26:32 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:26:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:28:41 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:28:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:28:46 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:28:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:29:02 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:29:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:30:46 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:30:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:31:21 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:31:21 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:31:24 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:31:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:31:40 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:31:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:32:11 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:32:11 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:32:19 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:32:19 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:32:22 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:32:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:32:24 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:32:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:34:00 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:34:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:34:24 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 4
+[12-Mar-2020 02:34:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:35:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:36:03 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ivcbr/public_html/eventos/user/cracha/index.php:1) in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 8
+[12-Mar-2020 02:36:19 UTC] PHP Warning:  require_once(/user_functions.php): failed to open stream: No such file or directory in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 3
+[12-Mar-2020 02:36:19 UTC] PHP Fatal error:  require_once(): Failed opening required '/user_functions.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/ivcbr/public_html/eventos/user/cracha/index.php on line 3
