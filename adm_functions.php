@@ -173,15 +173,19 @@ function getNivelAcesso($usuario){
         $connect = conection();
         $id_inscrito = getIdInscrito($cpf);
 
-        $sql = "SELECT * FROM log_pagamento WHERE log_pagamento.inscritos ='$id_inscrito'";
+        $sql = "SELECT horario FROM log_pagamento WHERE log_pagamento.inscritos ='$id_inscrito'";
         $resultado = mysqli_query($connect, $sql);
         
         if($resultado){
             $row = mysqli_fetch_array($resultado);
-            $dados = $row['1'];
-        
+            $data = $row['0'];
+
+            $timestamp = strtotime($data); 	           
+            $data = date('d/m/Y',$timestamp);
+            return $data;
         }else{
             return false;
+            
         }
        
 
