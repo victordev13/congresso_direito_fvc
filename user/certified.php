@@ -20,7 +20,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
 function liberarCertificado()
 {
-  $data_liberacao = "10-03-2020";
+  $data_liberacao = "27-03-2020";
   $today = date("d-m-Y");
 
   if (strtotime($today) >= strtotime($data_liberacao) && getStatus() == 1) {

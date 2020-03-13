@@ -105,3 +105,28 @@ p.creditos{
 	}
 
 }
+
+.liberado{
+    font-size: 32pt;
+    font-weight: bold;
+	color: green;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.nao-permitido{
+    font-size: 32pt;
+    font-weight: bold;
+	color: red;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.mensagem{
+	font-size: 18pt;
+	text-align: center;
+}
+
+.mensagem span{
+	font-weight: bold;
+}
