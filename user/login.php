@@ -5,6 +5,11 @@ require_once '../db/connect.php';
 $erro = "";
 $mensagem = "";
 
+
+if(isset($_GET["msg"])){
+  $mensagem = "Inscrição realizada com sucesso!";
+}
+
 if (isset($_POST['login'])) {
   $email = formata($_POST['email-login']);
   $cpf = formatarCPF($_POST['cpf-login']);
@@ -18,9 +23,11 @@ if (isset($_POST['login'])) {
 
       header("location: index.php");
     } else {
+      $mensagem = "";
       $erro = "Inscrição não encontrada!";
     }
   } else {
+    $mensagem = "";
     $erro = "CPF inválido!";
   }
 }
@@ -113,21 +120,23 @@ if (isset($_POST['login'])) {
                 <div class="tab-content">
                   <div class="tab-pane active" id="about">
                     <div class="row">
-
-                      <h5 class="info-text">Preenchar os campos abaixo para visualizar o status da sua inscrição</h5>
-                      <div class="col-sm-10 col-sm-offset-1">
-                        <?php
+                    <div class="col-sm-10 col-sm-offset-1">
+                    <?php
                         if (!$erro == "") {
                           echo "<div class='alert alert-danger alerta-sm' role='alert'>";
                           echo $erro;
                           echo "</div>";
                         }
                         if (!$mensagem == "") {
-                          echo "<div class='alert alert-warning alerta-sm' role='alert'>";
-
+                          echo "<div class='alert alert-success alerta-sm' role='alert'>";
+                          echo $mensagem;
                           echo "</div>";
                         }
                         ?>
+                    </div>
+                      <h5 class="info-text">Preencha os campos abaixo para visualizar o status da sua inscrição</h5>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        
                         <div class="form-group">
                           <label>Email</label>
                           <input name="email-login" type="email" class="form-control" placeholder="meu@email.com" required>

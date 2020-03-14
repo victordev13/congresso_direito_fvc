@@ -110,19 +110,19 @@ function liberarCertificado()
 
                 <div class="wizard-navigation">
                   <div class="progress-with-circle">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
                   </div>
                   <ul>
                     <li>
-                      <a href="../index.php" data-toggle="tab" aria-expanded="false">
-                        <div class="icon-circle checked">
+                      <a data-toggle="tab" aria-expanded="false">
+                        <div id="menuInscricao" class="icon-circle checked">
                           <i class="ti-user"></i>
                         </div>
                         INSCRIÇÃO
                       </a>
                     </li>
                     <li>
-                      <a href="index.php" data-toggle="tab" aria-expanded="false">
+                      <a data-toggle="tab" aria-expanded="false">
                         <div id="menuStatus" class="icon-circle checked">
                           <i class="ti-settings"></i>
                         </div>
@@ -130,7 +130,7 @@ function liberarCertificado()
                       </a>
                     </li>
                     <li class="active">
-                      <a href="certified.php" data-toggle="tab" aria-expanded="true">
+                      <a data-toggle="tab" aria-expanded="true">
                         <div class="icon-circle checked">
                           <i class="ti-layout-cta-center"></i>
                         </div>
@@ -183,8 +183,14 @@ function liberarCertificado()
 <script src="../assets/js/jquery.validate.min.js" type="text/javascript"></script>
 <script>
   let menuStats = document.getElementById('menuStatus');
+  let menuInscricao = document.getElementById('menuInscricao');
 
 menuStatus.onclick = function(){
   window.location = 'index.php';
-}</script>
+}
+
+menuInscricao.onclick = function(){
+  window.location = '../index.php';
+}
+</script>
 </html>
