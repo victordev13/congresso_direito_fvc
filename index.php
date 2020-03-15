@@ -27,7 +27,7 @@ if (isset($_POST['inscrever'])) {
                 $_SESSION['subscribe'] = true;
                 $_SESSION['id_subscribe'] = $id_subscribe;
 
-                 echo "<script>window.location = 'user/index.php'</script>";
+                 echo "<script>window.location = 'user/login.php?msg=sucesso'</script>";
             } else {
                 $erro = "Erro ao realizar Inscrição!";
             }
@@ -146,7 +146,7 @@ if (isset($_POST['inscrever'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="wizard-footer footer">
+                            <div class="wizard-footer">
                                 <div class="pull-left">
                                     <button type='submit' name="inscrever" class="btn btn-success btn-fill btn-wd">
                                         Inscrever-se

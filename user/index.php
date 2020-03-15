@@ -155,12 +155,12 @@ function getStatus()
                   <div class="wizard-header text-center">
                     <h3 class="wizard-title">Status</h3>
                     <p class="category">Acompanhe o status da sua inscrição</p>
-                    <a href="logout.php" class="btn btn-fvc btn-danger" style="margin-top: -65px; margin-right: 10px" >Sair</a>
+                    <a href="logout.php" class="btn btn-fvc btn-danger" style="margin-top: -65px;" >Sair</a>
                   </div>
 
                   <div class="wizard-navigation">
                     <div class="progress-with-circle">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+                      <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
                     </div>
                     <ul>
                       <li>
@@ -172,7 +172,7 @@ function getStatus()
                         </a>
                       </li>
                       <li class="active">
-                        <a href="#" data-toggle="tab" aria-expanded="true">
+                        <a data-toggle="tab" aria-expanded="true">
                           <div class="icon-circle">
                             <i class="ti-settings"></i>
                           </div>
@@ -180,8 +180,8 @@ function getStatus()
                         </a>
                       </li>
                       <li>
-                        <a href="certified.php">
-                          <div class="icon-circle">
+                        <a>
+                          <div id="menuCertificado" class="icon-circle">
                             <i class="ti-layout-cta-center"></i>
                           </div>
                           CERTIFICADO
@@ -291,8 +291,15 @@ function getStatus()
 <script src="../js/user.js" type="text/javascript"></script>
 <script>
   let menuInscricao = document.getElementById('menuInscricao');
+  let menuCertificado = document.getElementById('menuCertificado');
+
 
   menuInscricao.onclick = function(){
   window.location = '../index.php';
-}</script>
+  }
+
+  menuCertificado.onclick = function(){
+  window.location = './certified.php';
+  }
+</script>
 </html>

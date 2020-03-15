@@ -1,7 +1,7 @@
 <?php
 $host="localhost"; 
 $username="root"; 
-$password="102030"; 
+$password=""; 
 $db_name="congresso";
 
 ?>
