@@ -1,7 +1,7 @@
 * {
  margin: 0px auto;
  font-family: 'Oswald', sans-serif;
- font-size: 14px;
+ font-size: 15px;
 }
 
 body { 
@@ -11,15 +11,29 @@ background-image: url("../imagens/fundo.jpg");
 }
 
 .fontmenor{
-    font-size: 10px;
+    font-size: 13px;
 }
 
 #container{
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 20px;
-    width: 220px;
+    width: 250px;
     border: 0,9px solid;
     -webkit-box-shadow: 3px 3px 34px -1px rgba(143,140,143,1);
     -moz-box-shadow: 3px 3px 34px -1px rgba(143,140,143,1);
     box-shadow: 3px 3px 34px -1px rgba(143,140,143,1);
+    border-radius: 10px;
+}
+
+.codigo{
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.logo{
+    margin-bottom: 10px;
+}
+
+.texto{
+    margin-bottom: 20px;    
 }

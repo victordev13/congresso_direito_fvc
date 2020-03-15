@@ -63,7 +63,7 @@ function liberarCertificado()
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificado - Congresso de Direito da FVC</title>
+  <title>Certificado - III SEMINÁRIO JURÍDICO DO CAD-FVC</title>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
@@ -140,7 +140,7 @@ function liberarCertificado()
                   </ul>
                 </div>
                 <div class="tab-content">
-                  <div class="tab-pane active" id="about">
+                  <div class="tab-pane active" id="certificado">
                     <div class="row">
                       <?php
                       liberarCertificado();

@@ -89,18 +89,35 @@ p.creditos{
 	font-size: 10pt;
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 372px) {
+	img{
+		height: 45px!important;
+		margin-top: 7px;
+	}
+
+	.wizard-footer {
+		display: grid;
+		text-align: center!important;
+		
+	}
+	.wizard-footer button{
+		margin-bottom: 10px;
+	}
+
+}
+
+@media screen and (max-width: 320px) {
 	img{
 		height: 34px!important;
 		margin-top: 7px;
 	}
 
-	.footer {
+	.wizard-footer {
 		display: grid;
 		text-align: center!important;
 		
 	}
-	.footer button{
+	.wizard-footer button{
 		margin-bottom: 10px;
 	}
 
