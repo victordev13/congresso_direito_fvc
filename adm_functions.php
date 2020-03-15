@@ -164,7 +164,6 @@ function getNivelAcesso($usuario){
             return false;
         }
        
-
         FecharConexao($connect);
     }
 
@@ -255,4 +254,44 @@ function getNivelAcesso($usuario){
     
 //  FIM FUNÇÕES DO USUÁRIO FINANCEIRO //
 
+
+// FUNÇÕES DO USUÁRIO ADMINISTRADOR //
+
+function liberaComComprovante($cpf){
+    $connect = conection();
+
+        registraPagamento($cpf);
+
+        $sql = "UPDATE inscritos SET status='2' WHERE cpf='$cpf'";
+        $resultado = mysqli_query($connect, $sql);
+        
+        if($resultado == 1){
+            return true;
+        }else{
+            return false;
+        }
+       
+        FecharConexao($connect);
+}
+
+function getDiaEvento(){
+
+}
+
+function getEntrada(){
+    //verifica qual é o dia atual e se tem alguma entrada do cpf atual
+}
+
+function getSaída(){
+    //verifica Se o usuário já saiu do evento na data atual
+}
+
+function setEntrada(){
+    //verifica Se o usuário entrou no evento na data atual
+}
+
+function setSaida(){
+       
+}
+// //
 ?>
