@@ -100,7 +100,7 @@ if (isset($_POST['liberar'])) {
                             <form method="POST" id="formCPF" name="formCPF" class="form-inline justify-content-center align-items-center">
                                 <label for="cpf" class="mr-sm-2">CPF:</label>
                                 <input type="text" class="form-control mr-sm-3" id="cpf"  name="cpf" placeholder="123.456.789-10">
-                                <button type="submit" class="btn btn-fvc mb-4" name="liberar">Liberar</button>
+                                <button type="submit" class="btn btn-fvc mb-4" name="liberar">Confirmar presença</button>
                             </form>
                             <?php
 
@@ -125,9 +125,12 @@ if (isset($_POST['liberar'])) {
 
                             }
                             if ($liberado) {
+
                                 echo "<div class='liberado'>";
                                 echo "ACESSO LIBERADO!";
                                 echo "</div>";
+                                echo "<center>".marcarPresenca($cpf)."</center>";
+                            
                             }
                             ?>
                             <div class="row">
