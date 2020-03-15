@@ -147,3 +147,14 @@ p.creditos{
 .mensagem span{
 	font-weight: bold;
 }
+
+.modal-bg{
+	background-color: rgba(0,0,0,.7);
+}
+
+.nav-item{
+	transition: all .2s;
+}
+.nav-item:hover{
+	background-color: #00754842;
+}

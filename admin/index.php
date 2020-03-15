@@ -2,8 +2,8 @@
 require_once '../functions.php';
 require_once '../adm_functions.php';
 require_once '../user_functions.php';
-
 acessoRestrito(1);
+
 $naoLiberado = "";
 $nome = "";
 $mensagemErro = "";
@@ -21,7 +21,8 @@ if (isset($_POST['liberar'])) {
                     
                 }else{
                     $naoLiberado = true;
-                    $mensagemErro = "Pagamento não efetuado!<br>Favor procurar o setor Financeiro";
+                    $nome = getNomeInscrito($cpf);
+                    $mensagemErro = "Pagamento não efetuado!<br>Favor procurar o setor Financeiro.";
                 }
             }else{
                 $naoLiberado = true;
@@ -33,24 +34,45 @@ if (isset($_POST['liberar'])) {
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador - Congresso de Direito da FVC</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    
 </head>
 
 <body class="bg-dark">
-    <main>
+<main>
+<!-- Modal -->
+<div class="modal modal-bg" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 400px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Liberar com comprovante</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST">
+        <input type="hidden" class="form-control mr-sm-3"  name="confirmaCPF" value="<?php echo $cpf;?>">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" name="confirma" class="btn btn-danger">Confirmar Lberação</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIM MODAL LIBERAÇÃO -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
@@ -62,7 +84,6 @@ if (isset($_POST['liberar'])) {
                     <a class="nav-item nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Item 1<span class="sr-only"></span></a>
                     <a class="nav-item nav-link" href="#">Item 2<span class="sr-only"></span></a>
-                    <a href="#" class="btn btn-secondary my-2 my-lg-0 ml-2 " type="submit">Liberar com comprovante</a>
                     <a href="../logout.php" class="btn btn-fvc my-2 my-lg-0 ml-2 " type="submit">Sair</a>
                 </div>
             </div>
@@ -82,6 +103,13 @@ if (isset($_POST['liberar'])) {
                                 <button type="submit" class="btn btn-fvc mb-4" name="liberar">Liberar</button>
                             </form>
                             <?php
+
+                            if(isset($_POST['confirma'])){
+                                $cpf = $_POST['confirmaCPF'];
+                                liberaComComprovante($cpf);
+                                $liberado = true;
+                            }
+
                             if ($naoLiberado) {
                                 echo "<div class='nao-permitido'>ACESSO NÃO PERMITIDO</div>";
                                
@@ -89,9 +117,12 @@ if (isset($_POST['liberar'])) {
                                 if(!$nome==""){
                                     echo "Nome: ".$nome."<br>";
                                 }
-                                
+            
                                 echo "<div class='alert alert-danger alerta-sm' role='alert'>".$mensagemErro."</div>";
                                 echo "</div>";
+
+                                echo "<form><button type='button' class='btn btn-secondary my-2 my-lg-0 ml-2' data-toggle='modal' data-target='#modal' data-backdrop='false'>Liberar com comprovante</button></form>";
+
                             }
                             if ($liberado) {
                                 echo "<div class='liberado'>";
@@ -105,5 +136,6 @@ if (isset($_POST['liberar'])) {
                 </div>
                 
 <?php
+
 require_once '../includes/footer_adm.php'
 ?>
