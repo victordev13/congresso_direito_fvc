@@ -355,13 +355,15 @@ function marcarPresenca($cpf)
 
 
     if ($resultado >= 1) {
+        $sql = "SELECT * FROM presenca WHERE id_inscritos='$id_inscritos' order by dia desc";
+        $query = mysqli_query($conection, $sql);
         $retorno = mysqli_fetch_array($query);
         $dia = $retorno['dia'];
         $saida = $retorno['saida'];
+
         if (empty($saida)) {
             return setSaida($id_inscritos);
-        }
-        if (strtotime($hoje) == strtotime($dia)) {
+        }else if (strtotime($hoje) == strtotime($dia)) {
             return "Inscrito já entrou e saiu do evento hoje!";
         } else {
             return setEntrada($id_inscritos);
